@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+      <id>Cake.WebDeploy</id>
+      <version>0.0.0</version>
+      <authors>Phillip Sharpe</authors>
+      <owners>Phillip Sharpe</owners>
+      <title>Cake.WebDeploy</title>
+      <description>Cake Build addon for publishing websites via WebDeploy.</description>
+      <summary>WebDeploy addon for cake build.</summary>
+      <licenseUrl>https://github.com/SharpeRAD/Cake.WebDeploy/LICENSE</licenseUrl>
+      <projectUrl>https://github.com/SharpeRAD/Cake.WebDeploy</projectUrl>
+      <iconUrl>https://raw.githubusercontent.com/cake-build/graphics/master/png/cake-medium.png</iconUrl>
+      <requireLicenseAcceptance>false</requireLicenseAcceptance>
+      <copyright>Copyright (c) Phillip Sharpe 2015</copyright>
+      <releaseNotes>Initial Release</releaseNotes>
+      <tags>Cake Script Build WebDeploy</tags>
+
+      <dependencies>
+         <dependency id="Cake.Core" />
+      </dependencies>
+   </metadata>
+
+   <files>
+      <file src="Microsoft.Web.Deployment.dll" target="lib/net45" />
+      <file src="Cake.WebDeploy.dll" target="lib/net45" />
+      <file src="LICENSE" />
+   </files>
+</package>
