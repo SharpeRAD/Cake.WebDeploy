@@ -46,8 +46,8 @@ Task("Build")
 
 Task("Deploy")
 	.IsDependentOn("Build")
-    .Description("Deploy an example website")
-    .Does(() =>
+	.Description("Deploy an example website")
+	.Does(() =>
 	{
 		DeployWebsite(new PublishSettings()
 		{

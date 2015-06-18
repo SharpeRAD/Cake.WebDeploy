@@ -59,11 +59,7 @@ namespace Cake.WebDeploy
 
 
         #region Functions (4)
-            /// <summary>
-            /// Deploys the content of a website
-            /// </summary>
-            /// <param name="settings">The publish settings.</param>
-            /// <returns>DeploymentChangeSummary.</returns>
+            /// <inheritdoc />
             public DeploymentChangeSummary Deploy(PublishSettings settings)
             {
                 if (settings == null)
