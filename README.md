@@ -41,6 +41,19 @@ Task("Deploy")
 	});
 
 
+Task("Deploy-Fluent")
+    .Description("Deploy an example website")
+    .Does(() =>
+	{
+		DeployWebsite(new PublishSettings()
+			.FromSourcePath("./src/Package.zip")
+			.UseSiteName("TestSite")
+			.UseComputerName("remote-location")
+			.UseUsername("admin")
+			.UsePassword("pass1"));
+	});
+
+
 RunTarget("Deploy");
 ```
 

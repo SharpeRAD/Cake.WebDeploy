@@ -229,7 +229,7 @@ namespace Cake.WebDeploy
         /// <param name="settings">The publish settings.</param>
         /// <param name="path">The path to the package to publish</param>
         /// <returns>The same <see cref="PublishSettings"/> instance so that multiple calls can be chained.</returns>
-        public static PublishSettings SetSourcePath(this PublishSettings settings, string path)
+        public static PublishSettings FromSourcePath(this PublishSettings settings, string path)
         {
             if (settings == null)
             {
@@ -246,7 +246,7 @@ namespace Cake.WebDeploy
         /// <param name="settings">The publish settings.</param>
         /// <param name="path">The path where the package should end up</param>
         /// <returns>The same <see cref="PublishSettings"/> instance so that multiple calls can be chained.</returns>
-        public static PublishSettings SetDestinationPath(this PublishSettings settings, string path)
+        public static PublishSettings ToDestinationPath(this PublishSettings settings, string path)
         {
             if (settings == null)
             {

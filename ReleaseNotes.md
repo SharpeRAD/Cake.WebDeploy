@@ -2,6 +2,7 @@
 * Code documentation
 * Missing publish settings extensions
 * Copy tools to test folder
+* Extension name changes
 
 ### New in 0.0.3 (Released 2015/06/17)
 * Updated documentation
