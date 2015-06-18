@@ -18,7 +18,7 @@ namespace Cake.WebDeploy
         /// <summary>
         /// Deploys the content of a website
         /// </summary>
-        /// <param name="context">The context.</param>
+        /// <param name="context">The cake context.</param>
         /// <param name="settings">The publish settings.</param>
         /// <returns>DeploymentChangeSummary.</returns>
         [CakeMethodAlias]

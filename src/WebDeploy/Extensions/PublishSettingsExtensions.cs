@@ -13,7 +13,7 @@ namespace Cake.WebDeploy
     public static class PublishSettingsExtensions
     {
         /// <summary>
-        /// Gets or sets the url to publish that package to
+        /// Sets the url to publish that package to
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <param name="url">The publish url</param>
@@ -30,7 +30,7 @@ namespace Cake.WebDeploy
         }
 
         /// <summary>
-        /// Gets or sets the type of remote agent to connect to
+        /// Sets the type of remote agent to connect to
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <param name="agentType">The type of remote agent</param>
@@ -47,7 +47,7 @@ namespace Cake.WebDeploy
         }
 
         /// <summary>
-        /// Gets or sets if NTLM authentication should be used
+        /// Sets if NTLM authentication should be used
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <param name="ntlm">use NTLM</param>
@@ -64,7 +64,7 @@ namespace Cake.WebDeploy
         }
 
         /// <summary>
-        /// Gets or sets if untrusted certificates should be allowed
+        /// Sets if untrusted certificates should be allowed
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <param name="untrusted">Allow untrusted certificates</param>
@@ -83,7 +83,7 @@ namespace Cake.WebDeploy
 
 
         /// <summary>
-        /// Sets the computer name on connect to
+        /// Sets the computer name on publish to
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <param name="name">The computer name</param>
@@ -117,10 +117,10 @@ namespace Cake.WebDeploy
         }
 
         /// <summary>
-        /// Sets the computer name on connect to
+        /// Sets the name of the website to publish
         /// </summary>
         /// <param name="settings">The publish settings.</param>
-        /// <param name="name">The computer name</param>
+        /// <param name="name">The name of the website to publish</param>
         /// <returns>The same <see cref="PublishSettings"/> instance so that multiple calls can be chained.</returns>
         public static PublishSettings UseSiteName(this PublishSettings settings, string name)
         {
@@ -136,7 +136,7 @@ namespace Cake.WebDeploy
 
 
         /// <summary>
-        /// Gets or sets the credentials to use when connecting
+        /// Sets the credentials to use when connecting
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <param name="username">The username to connect with.</param>
@@ -153,7 +153,7 @@ namespace Cake.WebDeploy
         }
 
         /// <summary>
-        /// Gets or sets the credentials to use when connecting
+        /// Sets the credentials to use when connecting
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <param name="password">The password to connect with.</param>
@@ -172,7 +172,7 @@ namespace Cake.WebDeploy
 
 
         /// <summary>
-        /// Gets or sets the logging trace level
+        /// Sets the logging trace level
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <param name="level">The trace level.</param>
@@ -189,7 +189,7 @@ namespace Cake.WebDeploy
         }
 
         /// <summary>
-        /// Gets or sets if files that no longer exist should be deleted
+        /// Sets if files that no longer exist should be deleted
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <param name="delete">IF files should be deleted.</param>
@@ -206,7 +206,7 @@ namespace Cake.WebDeploy
         }
 
         /// <summary>
-        /// Gets or sets if operations will not be executed but events will still be fired
+        /// Sets if operations will not be executed but events will still be fired
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <param name="whatIf">If operations will not be executed</param>
@@ -221,5 +221,41 @@ namespace Cake.WebDeploy
             settings.WhatIf = whatIf;
             return settings;
         }
+
+
+        /// <summary>
+        /// Sets the source of the package to publish
+        /// </summary>
+        /// <param name="settings">The publish settings.</param>
+        /// <param name="path">The path to the package to publish</param>
+        /// <returns>The same <see cref="PublishSettings"/> instance so that multiple calls can be chained.</returns>
+        public static PublishSettings SetSourcePath(this PublishSettings settings, string path)
+        {
+            if (settings == null)
+            {
+                throw new ArgumentNullException("settings");
+            }
+
+            settings.SourcePath = path;
+            return settings;
+        }
+
+        /// <summary>
+        /// Sets the destination of the package to publish to
+        /// </summary>
+        /// <param name="settings">The publish settings.</param>
+        /// <param name="path">The path where the package should end up</param>
+        /// <returns>The same <see cref="PublishSettings"/> instance so that multiple calls can be chained.</returns>
+        public static PublishSettings SetDestinationPath(this PublishSettings settings, string path)
+        {
+            if (settings == null)
+            {
+                throw new ArgumentNullException("settings");
+            }
+
+            settings.DestinationPath = path;
+            return settings;
+        }
+
     }
 }

@@ -1,3 +1,8 @@
+### New in 0.0.4 (Released 2015/06/18)
+* Code documentation
+* Missing publish settings extensions
+* Copy tools to test folder
+
 ### New in 0.0.3 (Released 2015/06/17)
 * Updated documentation
 * Added PublishSettings extensions methods

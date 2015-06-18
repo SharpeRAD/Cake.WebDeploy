@@ -164,7 +164,10 @@ Task("Copy-Files")
 
     CopyFiles(new FilePath[] { "LICENSE", "README.md", "ReleaseNotes.md" }, binDir);
 
+
+	CopyDirectory("./tools/",  "./test/tools/");
 	CreateDirectory("./test/tools/Addins/Cake.WebDeploy/lib/net45/");
+
 	CopyFileToDirectory(buildDir + "/Cake.WebDeploy.dll", "./test/tools/Addins/Cake.WebDeploy/lib/net45/");
 	CopyFileToDirectory("./lib/Microsoft.Web.Deployment.dll", "./test/tools/Addins/Cake.WebDeploy/lib/net45/");
 });

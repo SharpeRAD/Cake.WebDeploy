@@ -65,6 +65,9 @@ namespace Cake.WebDeploy
 
 
         #region Properties (10)
+            /// <summary>
+            /// Gets or sets the url to publish that package to
+            /// </summary>
             public string PublishUrl
             {
                 get
@@ -91,6 +94,9 @@ namespace Cake.WebDeploy
                 }
             }
 
+            /// <summary>
+            /// Gets or sets the type of remote agent to connect to
+            /// </summary>
             public RemoteAgent AgentType
             {
                 get
@@ -103,6 +109,9 @@ namespace Cake.WebDeploy
                 }
             }
 
+            /// <summary>
+            /// Gets or sets if NTLM authentication should be used
+            /// </summary>
             public bool NTLM
             {
                 get
@@ -128,6 +137,9 @@ namespace Cake.WebDeploy
                 }
             }
 
+            /// <summary>
+            /// Gets or sets if untrusted certificates should be allowed
+            /// </summary>
             public bool AllowUntrusted
             {
                 get
@@ -141,7 +153,9 @@ namespace Cake.WebDeploy
             }
 
 
-
+            /// <summary>
+            /// Gets or sets the computer name to publish to
+            /// </summary>
             public string ComputerName
             {
                 get
@@ -154,6 +168,9 @@ namespace Cake.WebDeploy
                 }
             }
 
+            /// <summary>
+            /// Sets the remote port to connect on
+            /// </summary>
             public int Port
             {
                 get
@@ -166,6 +183,9 @@ namespace Cake.WebDeploy
                 }
             }
 
+            /// <summary>
+            /// Sets the name of the website to publish
+            /// </summary>
             public string SiteName
             {
                 get
@@ -179,7 +199,9 @@ namespace Cake.WebDeploy
             }
 
 
-
+            /// <summary>
+            /// Gets or sets the credentials to use when connecting
+            /// </summary>
             public string Username
             {
                 get
@@ -192,6 +214,9 @@ namespace Cake.WebDeploy
                 }
             }
 
+            /// <summary>
+            /// Gets or sets the credentials to use when connecting
+            /// </summary>
             public string Password
             {
                 get
@@ -205,7 +230,9 @@ namespace Cake.WebDeploy
             }
 
 
-
+            /// <summary>
+            /// Gets or sets the logging trace level
+            /// </summary>
             public TraceLevel TraceLevel
             {
                 get
@@ -218,6 +245,9 @@ namespace Cake.WebDeploy
                 }
             }
 
+            /// <summary>
+            /// Gets or sets if files that no longer exist should be deleted
+            /// </summary>
             public bool Delete
             {
                 get
@@ -230,6 +260,9 @@ namespace Cake.WebDeploy
                 }
             }
 
+            /// <summary>
+            /// Gets or sets if operations will not be executed but events will still be fired
+            /// </summary>
             public bool WhatIf
             {
                 get
@@ -244,6 +277,9 @@ namespace Cake.WebDeploy
 
 
 
+            /// <summary>
+            /// Gets or sets the source of the package to publish
+            /// </summary>
             public FilePath SourcePath
             {
                 get
@@ -256,6 +292,9 @@ namespace Cake.WebDeploy
                 }
             }
 
+            /// <summary>
+            /// Gets or sets the destination of the package to publish to
+            /// </summary>
             public FilePath DestinationPath
             {
                 get
