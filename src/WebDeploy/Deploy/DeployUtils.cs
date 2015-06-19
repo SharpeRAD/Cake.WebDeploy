@@ -34,10 +34,12 @@ namespace Cake.WebDeploy
 
                     if (!string.IsNullOrEmpty(siteName))
                     {
+                        //Site
                         computerName = string.Format("https://{0}?site={1}", computerName, siteName);
                     }
                     else
                     {
+                        //Root
                         computerName = string.Format("https://{0}", computerName);
                     }
                 }
@@ -73,12 +75,13 @@ namespace Cake.WebDeploy
 
                     if (slashIndex > -1)
                     {
-                        //publishUrl = InsertPortBeforeSlash(publishUrl, slashIndex);
+                        //Before slash
                         publishUrl = publishUrl.Insert(slashIndex, ":" + port.ToString());
                     }
                     else
                     {
-                        publishUrl = publishUrl + DefaultPort;
+                        //No Slash
+                        publishUrl = publishUrl + ":" + DefaultPort;
                     }
                 }
 

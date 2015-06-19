@@ -61,3 +61,9 @@ RunTarget("Deploy");
 ## Example
 
 A complete cake build example can be found [here](https://github.com/SharpeRAD/Cake.WebDeploy/blob/master/test/build.cake)
+
+
+
+## TroubleShooting
+
+A few pointers for correctly enabling WebDeploy scripting can be found [here](https://github.com/SharpeRAD/Cake.WebDeploy/blob/master/TroubleShooting.md)

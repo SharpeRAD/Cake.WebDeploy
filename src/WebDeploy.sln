@@ -31,6 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{23704DC0-E
 	ProjectSection(SolutionItems) = preProject
 		..\LICENSE = ..\LICENSE
 		..\README.md = ..\README.md
+		..\TroubleShooting.md = ..\TroubleShooting.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.WebDeploy.TestSite", "WebDeploy.TestSite\Cake.WebDeploy.TestSite.csproj", "{DDDE4ED0-11D5-4D1D-86D0-3B0C7409294C}"

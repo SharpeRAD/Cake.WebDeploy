@@ -1,3 +1,7 @@
+### New in 0.0.5 (Released 2015/06/19)
+* Fixed bug in appending the port to the publish url
+* Added a troubleshooting page
+
 ### New in 0.0.4 (Released 2015/06/18)
 * Code documentation
 * Missing publish settings extensions
