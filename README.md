@@ -19,6 +19,22 @@ This is a list of some the currently implemented functionality:
 
 
 
+## Referencing
+
+Cake.WebDeploy is avaiable as a nuget package from the package manager console:
+
+```csharp
+Install-Package Cake.WebDeploy
+```
+
+or directly in your build script via a cake addin:
+
+```csharp
+#addin "Cake.WebDeploy"
+```
+
+
+
 ## Usage
 
 ```csharp
@@ -26,7 +42,7 @@ This is a list of some the currently implemented functionality:
 
 
 Task("Deploy")
-    .Description("Deploy an example website")
+    .Description("Deploy to a remote computer with web deployment agent installed")
     .Does(() =>
 	{
 		DeployWebsite(new PublishSettings()
@@ -41,8 +57,22 @@ Task("Deploy")
 	});
 
 
+Task("Deploy-Custom")
+    .Description("Deploy to Azure using a custom url")
+    .Does(() =>
+	{
+		DeployWebsite(new PublishSettings()
+		{
+			SourcePath = "./src/Package.zip",
+			PublishUrl = "{WEBSITENAME}.scm.azurewebsites.net",
+			Username = "admin",
+			Password = "pass1"
+		});
+	});
+
+
 Task("Deploy-Fluent")
-    .Description("Deploy an example website")
+    .Description("Deploy using fluent settings")
     .Does(() =>
 	{
 		DeployWebsite(new PublishSettings()
@@ -52,10 +82,27 @@ Task("Deploy-Fluent")
 			.UseUsername("admin")
 			.UsePassword("pass1"));
 	});
+	
+
+Task("Deploy-WhatIf")
+    .Description("See what would occur when publishing (WhatIf) and files should be deleted if they don't exist (Delete)")
+    .Does(() =>
+	{
+		DeployWebsite(new PublishSettings()
+		{
+			SourcePath = "./src/Package.zip",
+			Username = "admin",
+			Password = "pass1",
+
+			Delete = true,
+			WhatIf = true
+		});
+	});
 
 
 RunTarget("Deploy");
 ```
+
 
 
 ## Example
