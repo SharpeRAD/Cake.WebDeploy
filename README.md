@@ -21,7 +21,7 @@ This is a list of some the currently implemented functionality:
 
 ## Referencing
 
-Cake.WebDeploy is avaiable as a nuget package from the package manager console:
+Cake.WebDeploy is available as a nuget package from the package manager console:
 
 ```csharp
 Install-Package Cake.WebDeploy

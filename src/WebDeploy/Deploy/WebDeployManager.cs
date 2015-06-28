@@ -144,7 +144,7 @@ namespace Cake.WebDeploy
 
 
 
-            //Helers
+            //Helpers
             private DeploymentBaseOptions GetBaseOptions(PublishSettings settings)
             {
                 DeploymentBaseOptions options = new DeploymentBaseOptions
