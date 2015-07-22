@@ -1,5 +1,5 @@
 # Cake.WebDeploy
-Cake Build addon that extends Cake with WebDeploy commands for publishing to IIS
+Cake-Build addin that extends Cake with WebDeploy commands for publishing to IIS
 
 [![Build status](https://ci.appveyor.com/api/projects/status/rld9874ha4woe9m7?svg=true)](https://ci.appveyor.com/project/PhillipSharpe/cake-webdeploy)
 
@@ -10,8 +10,6 @@ Cake Build addon that extends Cake with WebDeploy commands for publishing to IIS
 
 
 ## Implemented functionality
-
-This is a list of some the currently implemented functionality:
 
 * Deploy websites from a package or folder
 * Locally / remotely using credentials
@@ -107,7 +105,7 @@ RunTarget("Deploy");
 
 ## Example
 
-A complete cake build example can be found [here](https://github.com/SharpeRAD/Cake.WebDeploy/blob/master/test/build.cake)
+A complete Cake example can be found [here](https://github.com/SharpeRAD/Cake.WebDeploy/blob/master/test/build.cake)
 
 
 
