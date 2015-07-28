@@ -1,3 +1,6 @@
+### New in 0.0.6 (Released 2015/07/28)
+* Added namespace imports
+
 ### New in 0.0.5 (Released 2015/06/19)
 * Fixed bug in appending the port to the publish url
 * Added a troubleshooting page
