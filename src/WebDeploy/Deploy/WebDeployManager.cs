@@ -60,7 +60,7 @@ namespace Cake.WebDeploy
 
         #region Functions (4)
             /// <inheritdoc />
-            public DeploymentChangeSummary Deploy(PublishSettings settings)
+            public DeploymentChangeSummary Deploy(DeploySettings settings)
             {
                 if (settings == null)
                 {
@@ -145,7 +145,7 @@ namespace Cake.WebDeploy
 
 
             //Helpers
-            private DeploymentBaseOptions GetBaseOptions(PublishSettings settings)
+            private DeploymentBaseOptions GetBaseOptions(DeploySettings settings)
             {
                 DeploymentBaseOptions options = new DeploymentBaseOptions
                 {

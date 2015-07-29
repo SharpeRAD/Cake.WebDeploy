@@ -13,6 +13,7 @@
 namespace Cake.WebDeploy
 {
     [CakeAliasCategory("WebDeploy")]
+    [CakeNamespaceImport("Microsoft.Web.Deployment")]
     public static class CakeAliases
     {
         /// <summary>
@@ -22,8 +23,7 @@ namespace Cake.WebDeploy
         /// <param name="settings">The publish settings.</param>
         /// <returns>DeploymentChangeSummary.</returns>
         [CakeMethodAlias]
-        [CakeNamespaceImport("Microsoft.Web.Deployment")]
-        public static DeploymentChangeSummary DeployWebsite(this ICakeContext context, PublishSettings settings)
+        public static DeploymentChangeSummary DeployWebsite(this ICakeContext context, DeploySettings settings)
         {
             return new WebDeployManager(context.Environment, context.Log).Deploy(settings);
         }

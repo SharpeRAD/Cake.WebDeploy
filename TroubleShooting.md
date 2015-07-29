@@ -30,5 +30,5 @@ Connected to the remote computer using Web Manage Service, but could not authori
 ```
 
 ### Solution
-* Check the PublishSettings credentials against the "IIS Manager Users" section in IIS on the remote machine.
+* Check the DeploySettings credentials against the "IIS Manager Users" section in IIS on the remote machine.
 * Check the "IIS Manager Permissions" section of IIS for the site your publishing to has an entry for the user your connecting with.

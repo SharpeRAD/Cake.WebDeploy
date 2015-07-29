@@ -49,7 +49,7 @@ Task("Deploy")
 	.Description("Deploy an example website")
 	.Does(() =>
 	{
-		DeployWebsite(new PublishSettings()
+		DeployWebsite(new DeploySettings()
 		{
 			SourcePath = "../src/WebDeploy.TestSite/obj/Release/Package/Cake.WebDeploy.TestSite.zip",
 			SiteName = "TestSite",

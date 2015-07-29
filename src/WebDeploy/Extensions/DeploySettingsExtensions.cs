@@ -8,17 +8,17 @@
 namespace Cake.WebDeploy
 {
     /// <summary>
-    /// Contains extension methods for <see cref="PublishSettings" />.
+    /// Contains extension methods for <see cref="DeploySettings" />.
     /// </summary>
-    public static class PublishSettingsExtensions
+    public static class DeploySettingsExtensions
     {
         /// <summary>
         /// Sets the url to publish that package to
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <param name="url">The publish url</param>
-        /// <returns>The same <see cref="PublishSettings"/> instance so that multiple calls can be chained.</returns>
-        public static PublishSettings SetPublishUrl(this PublishSettings settings, string url)
+        /// <returns>The same <see cref="DeploySettings"/> instance so that multiple calls can be chained.</returns>
+        public static DeploySettings SetPublishUrl(this DeploySettings settings, string url)
         {
             if (settings == null)
             {
@@ -34,8 +34,8 @@ namespace Cake.WebDeploy
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <param name="agentType">The type of remote agent</param>
-        /// <returns>The same <see cref="PublishSettings"/> instance so that multiple calls can be chained.</returns>
-        public static PublishSettings UseAgentType(this PublishSettings settings, RemoteAgent agentType)
+        /// <returns>The same <see cref="DeploySettings"/> instance so that multiple calls can be chained.</returns>
+        public static DeploySettings UseAgentType(this DeploySettings settings, RemoteAgent agentType)
         {
             if (settings == null)
             {
@@ -51,8 +51,8 @@ namespace Cake.WebDeploy
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <param name="ntlm">use NTLM</param>
-        /// <returns>The same <see cref="PublishSettings"/> instance so that multiple calls can be chained.</returns>
-        public static PublishSettings UseNTLM(this PublishSettings settings, bool ntlm = true)
+        /// <returns>The same <see cref="DeploySettings"/> instance so that multiple calls can be chained.</returns>
+        public static DeploySettings UseNTLM(this DeploySettings settings, bool ntlm = true)
         {
             if (settings == null)
             {
@@ -68,8 +68,8 @@ namespace Cake.WebDeploy
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <param name="untrusted">Allow untrusted certificates</param>
-        /// <returns>The same <see cref="PublishSettings"/> instance so that multiple calls can be chained.</returns>
-        public static PublishSettings SetAllowUntrusted(this PublishSettings settings, bool untrusted = true)
+        /// <returns>The same <see cref="DeploySettings"/> instance so that multiple calls can be chained.</returns>
+        public static DeploySettings SetAllowUntrusted(this DeploySettings settings, bool untrusted = true)
         {
             if (settings == null)
             {
@@ -87,8 +87,8 @@ namespace Cake.WebDeploy
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <param name="name">The computer name</param>
-        /// <returns>The same <see cref="PublishSettings"/> instance so that multiple calls can be chained.</returns>
-        public static PublishSettings UseComputerName(this PublishSettings settings, string name)
+        /// <returns>The same <see cref="DeploySettings"/> instance so that multiple calls can be chained.</returns>
+        public static DeploySettings UseComputerName(this DeploySettings settings, string name)
         {
             if (settings == null)
             {
@@ -104,8 +104,8 @@ namespace Cake.WebDeploy
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <param name="path">The working directory for the process to be started.</param>
-        /// <returns>The same <see cref="PublishSettings"/> instance so that multiple calls can be chained.</returns>
-        public static PublishSettings UsePort(this PublishSettings settings, int port)
+        /// <returns>The same <see cref="DeploySettings"/> instance so that multiple calls can be chained.</returns>
+        public static DeploySettings UsePort(this DeploySettings settings, int port)
         {
             if (settings == null)
             {
@@ -121,8 +121,8 @@ namespace Cake.WebDeploy
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <param name="name">The name of the website to publish</param>
-        /// <returns>The same <see cref="PublishSettings"/> instance so that multiple calls can be chained.</returns>
-        public static PublishSettings UseSiteName(this PublishSettings settings, string name)
+        /// <returns>The same <see cref="DeploySettings"/> instance so that multiple calls can be chained.</returns>
+        public static DeploySettings UseSiteName(this DeploySettings settings, string name)
         {
             if (settings == null)
             {
@@ -140,8 +140,8 @@ namespace Cake.WebDeploy
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <param name="username">The username to connect with.</param>
-        /// <returns>The same <see cref="PublishSettings"/> instance so that multiple calls can be chained.</returns>
-        public static PublishSettings UseUsername(this PublishSettings settings, string username)
+        /// <returns>The same <see cref="DeploySettings"/> instance so that multiple calls can be chained.</returns>
+        public static DeploySettings UseUsername(this DeploySettings settings, string username)
         {
             if (settings == null)
             {
@@ -157,8 +157,8 @@ namespace Cake.WebDeploy
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <param name="password">The password to connect with.</param>
-        /// <returns>The same <see cref="PublishSettings"/> instance so that multiple calls can be chained.</returns>
-        public static PublishSettings UsePassword(this PublishSettings settings, string password)
+        /// <returns>The same <see cref="DeploySettings"/> instance so that multiple calls can be chained.</returns>
+        public static DeploySettings UsePassword(this DeploySettings settings, string password)
         {
             if (settings == null)
             {
@@ -176,8 +176,8 @@ namespace Cake.WebDeploy
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <param name="level">The trace level.</param>
-        /// <returns>The same <see cref="PublishSettings"/> instance so that multiple calls can be chained.</returns>
-        public static PublishSettings SetTraceLevel(this PublishSettings settings, TraceLevel level)
+        /// <returns>The same <see cref="DeploySettings"/> instance so that multiple calls can be chained.</returns>
+        public static DeploySettings SetTraceLevel(this DeploySettings settings, TraceLevel level)
         {
             if (settings == null)
             {
@@ -193,8 +193,8 @@ namespace Cake.WebDeploy
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <param name="delete">IF files should be deleted.</param>
-        /// <returns>The same <see cref="PublishSettings"/> instance so that multiple calls can be chained.</returns>
-        public static PublishSettings SetDelete(this PublishSettings settings, bool delete = true)
+        /// <returns>The same <see cref="DeploySettings"/> instance so that multiple calls can be chained.</returns>
+        public static DeploySettings SetDelete(this DeploySettings settings, bool delete = true)
         {
             if (settings == null)
             {
@@ -210,8 +210,8 @@ namespace Cake.WebDeploy
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <param name="whatIf">If operations will not be executed</param>
-        /// <returns>The same <see cref="PublishSettings"/> instance so that multiple calls can be chained.</returns>
-        public static PublishSettings SetWhatIf(this PublishSettings settings, bool whatIf = true)
+        /// <returns>The same <see cref="DeploySettings"/> instance so that multiple calls can be chained.</returns>
+        public static DeploySettings SetWhatIf(this DeploySettings settings, bool whatIf = true)
         {
             if (settings == null)
             {
@@ -228,8 +228,8 @@ namespace Cake.WebDeploy
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <param name="path">The path to the package to publish</param>
-        /// <returns>The same <see cref="PublishSettings"/> instance so that multiple calls can be chained.</returns>
-        public static PublishSettings FromSourcePath(this PublishSettings settings, string path)
+        /// <returns>The same <see cref="DeploySettings"/> instance so that multiple calls can be chained.</returns>
+        public static DeploySettings FromSourcePath(this DeploySettings settings, string path)
         {
             if (settings == null)
             {
@@ -245,8 +245,8 @@ namespace Cake.WebDeploy
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <param name="path">The path where the package should end up</param>
-        /// <returns>The same <see cref="PublishSettings"/> instance so that multiple calls can be chained.</returns>
-        public static PublishSettings ToDestinationPath(this PublishSettings settings, string path)
+        /// <returns>The same <see cref="DeploySettings"/> instance so that multiple calls can be chained.</returns>
+        public static DeploySettings ToDestinationPath(this DeploySettings settings, string path)
         {
             if (settings == null)
             {

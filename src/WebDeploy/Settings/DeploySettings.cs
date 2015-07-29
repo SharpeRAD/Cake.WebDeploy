@@ -9,7 +9,7 @@
 
 namespace Cake.WebDeploy
 {
-    public class PublishSettings
+    public class DeploySettings
     {
         #region Fields (9)
             private string _PublishUrl = "";
@@ -37,7 +37,7 @@ namespace Cake.WebDeploy
 
 
         #region Constructor (1)
-            public PublishSettings()
+            public DeploySettings()
             {
                 _PublishUrl = "";
                 _AgentType = RemoteAgent.None;

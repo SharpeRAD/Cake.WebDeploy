@@ -43,7 +43,7 @@ Task("Deploy")
     .Description("Deploy to a remote computer with web deployment agent installed")
     .Does(() =>
 	{
-		DeployWebsite(new PublishSettings()
+		DeployWebsite(new DeploySettings()
 		{
 			SourcePath = "./src/Package.zip",
 			SiteName = "TestSite",
@@ -59,7 +59,7 @@ Task("Deploy-Custom")
     .Description("Deploy to Azure using a custom url")
     .Does(() =>
 	{
-		DeployWebsite(new PublishSettings()
+		DeployWebsite(new DeploySettings()
 		{
 			SourcePath = "./src/Package.zip",
 			PublishUrl = "{WEBSITENAME}.scm.azurewebsites.net",
@@ -73,7 +73,7 @@ Task("Deploy-Fluent")
     .Description("Deploy using fluent settings")
     .Does(() =>
 	{
-		DeployWebsite(new PublishSettings()
+		DeployWebsite(new DeploySettings()
 			.FromSourcePath("./src/Package.zip")
 			.UseSiteName("TestSite")
 			.UseComputerName("remote-location")
@@ -86,7 +86,7 @@ Task("Deploy-WhatIf")
     .Description("See what would occur when publishing (WhatIf) and files should be deleted if they don't exist (Delete)")
     .Does(() =>
 	{
-		DeployWebsite(new PublishSettings()
+		DeployWebsite(new DeploySettings()
 		{
 			SourcePath = "./src/Package.zip",
 			Username = "admin",

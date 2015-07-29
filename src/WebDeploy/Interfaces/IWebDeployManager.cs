@@ -15,6 +15,6 @@ namespace Cake.WebDeploy
         /// </summary>
         /// <param name="settings">The publish settings.</param>
         /// <returns>DeploymentChangeSummary.</returns>
-        DeploymentChangeSummary Deploy(PublishSettings settings);
+        DeploymentChangeSummary Deploy(DeploySettings settings);
     }
 }
