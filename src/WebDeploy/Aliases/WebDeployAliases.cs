@@ -12,9 +12,12 @@
 
 namespace Cake.WebDeploy
 {
+    /// <summary>
+    /// WebDeploy aliases
+    /// </summary>
     [CakeAliasCategory("WebDeploy")]
     [CakeNamespaceImport("Microsoft.Web.Deployment")]
-    public static class CakeAliases
+    public static class WebDeployAliases
     {
         /// <summary>
         /// Deploys the content of a website

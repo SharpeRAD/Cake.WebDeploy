@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aliases\CakeAliases.cs" />
+    <Compile Include="Aliases\WebDeployAliases.cs" />
     <Compile Include="Deploy\WebDeployManager.cs" />
     <Compile Include="Extensions\DeploySettingsExtensions.cs" />
     <Compile Include="Interfaces\IWebDeployManager.cs" />

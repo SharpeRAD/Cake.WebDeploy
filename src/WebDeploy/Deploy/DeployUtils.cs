@@ -6,12 +6,11 @@
 
 namespace Cake.WebDeploy
 {
-    public static class DeployUtils
+    internal static class DeployUtils
     {
         #region Constants (2)
-            public const string MSDeployHandler = "msdeploy.axd";
-
-            public const int DefaultPort = 8172;
+            internal const string MSDeployHandler = "msdeploy.axd";
+            internal const int DefaultPort = 8172;
         #endregion
 
 
@@ -19,7 +18,7 @@ namespace Cake.WebDeploy
 
 
         #region Functions (3)
-            public static string GetWmsvcUrl(string computerName, int port, string siteName)
+            internal static string GetWmsvcUrl(string computerName, int port, string siteName)
             {
                 if (!computerName.StartsWith("http", StringComparison.OrdinalIgnoreCase))
                 {
@@ -47,7 +46,7 @@ namespace Cake.WebDeploy
                 return computerName;
             }
 
-            public static string AppendHandlerIfNotSpecified(string publishUrl)
+            internal static string AppendHandlerIfNotSpecified(string publishUrl)
             {
                 if (!publishUrl.EndsWith(DeployUtils.MSDeployHandler, StringComparison.OrdinalIgnoreCase))
                 {
@@ -64,7 +63,7 @@ namespace Cake.WebDeploy
                 return publishUrl;
             }
 
-            public static string InsertPortIfNotSpecified(string publishUrl, int port)
+            internal static string InsertPortIfNotSpecified(string publishUrl, int port)
             {
                 string[] colonParts = publishUrl.Split(new char[] { ':' });
 
