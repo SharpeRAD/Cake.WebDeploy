@@ -1,3 +1,7 @@
+### New in 0.0.8 (Released 2015/09/18)
+* Bug fix for extensionless source paths
+* Complete documentation
+
 ### New in 0.0.7 (Released 2015/07/29)
 * Rename PublishSettings to DeploySettings to prevent a confliction with "Microsoft.Web.Deployment"
 

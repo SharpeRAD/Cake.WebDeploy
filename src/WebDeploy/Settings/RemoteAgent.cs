@@ -1,11 +1,8 @@
-﻿#region Using Statements
-    using System;
-#endregion
-
-
-
-namespace Cake.WebDeploy
+﻿namespace Cake.WebDeploy
 {
+    /// <summary>
+    /// The type of agent used during the deplyment
+    /// </summary>
     public enum RemoteAgent
     {
         WMSvc,

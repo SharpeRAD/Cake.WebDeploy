@@ -9,6 +9,9 @@
 
 namespace Cake.WebDeploy
 {
+    /// <summary>
+    /// The settings used for the deployment
+    /// </summary>
     public class DeploySettings
     {
         #region Fields (9)
@@ -37,6 +40,9 @@ namespace Cake.WebDeploy
 
 
         #region Constructor (1)
+            /// <summary>
+            /// Initializes a new instance of the <see cref="DeploySettings" /> class.
+            /// </summary>
             public DeploySettings()
             {
                 _PublishUrl = "";

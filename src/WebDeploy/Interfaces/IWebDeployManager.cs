@@ -1,6 +1,4 @@
 ﻿#region Using Statements
-    using System;
-
     using Microsoft.Web.Deployment;
 #endregion
 
@@ -8,6 +6,9 @@
 
 namespace Cake.WebDeploy
 {
+    /// <summary>
+    /// Responsible for deploying packages
+    /// </summary>
     public interface IWebDeployManager
     {
         /// <summary>

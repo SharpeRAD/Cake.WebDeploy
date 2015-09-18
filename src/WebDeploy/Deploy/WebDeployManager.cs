@@ -1,6 +1,5 @@
 ﻿#region Using Statements
     using System;
-    using System.IO;
     using System.Net;
     using System.Security.Cryptography.X509Certificates;
     using System.Net.Security;
@@ -8,7 +7,6 @@
 
     using Cake.Core;
     using Cake.Core.IO;
-    using Cake.Core.IO.Arguments;
     using Cake.Core.Diagnostics;
 
     using Microsoft.Web.Deployment;
@@ -27,14 +25,14 @@ namespace Cake.WebDeploy
             private readonly ICakeEnvironment _Environment;
             private readonly ICakeLog _Log;
         #endregion
-                
+
 
 
 
 
         #region Constructor (1)
             /// <summary>
-            /// Initializes a new instance of the <see cref="DeployManager" /> class.
+            /// Initializes a new instance of the <see cref="WebDeployManager" /> class.
             /// </summary>
             /// <param name="environment">The environment.</param>
             /// <param name="log">The log.</param>
@@ -59,7 +57,11 @@ namespace Cake.WebDeploy
 
 
         #region Functions (4)
-            /// <inheritdoc />
+            /// <summary>
+            /// Deploys the content of a website
+            /// </summary>
+            /// <param name="settings">The deployment settings.</param>
+            /// <returns>The <see cref="DeploymentChangeSummary"/> that was applied during the deployment.</returns>
             public DeploymentChangeSummary Deploy(DeploySettings settings)
             {
                 if (settings == null)

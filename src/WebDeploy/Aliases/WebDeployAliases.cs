@@ -1,8 +1,5 @@
 ﻿#region Using Statements
-    using System;
-
     using Cake.Core;
-    using Cake.Core.IO;
     using Cake.Core.Annotations;
 
     using Microsoft.Web.Deployment;
@@ -23,8 +20,8 @@ namespace Cake.WebDeploy
         /// Deploys the content of a website
         /// </summary>
         /// <param name="context">The cake context.</param>
-        /// <param name="settings">The publish settings.</param>
-        /// <returns>DeploymentChangeSummary.</returns>
+        /// <param name="settings">The deployment settings.</param>
+        /// <returns>The <see cref="DeploymentChangeSummary"/> that was applied during the deployment.</returns>
         [CakeMethodAlias]
         public static DeploymentChangeSummary DeployWebsite(this ICakeContext context, DeploySettings settings)
         {
