@@ -108,7 +108,8 @@ namespace Cake.WebDeploy
 
 
                 //If the content path is a zip file, use the Package provider
-                if (sourcePath.GetExtension().Equals(".zip", StringComparison.OrdinalIgnoreCase))
+                string extension = sourcePath.GetExtension();
+                if (extension != null && extension.Equals(".zip", StringComparison.OrdinalIgnoreCase))
                 {
                     // For some reason, we can't combine a zip with a physical target path
                     if (destProvider == DeploymentWellKnownProvider.DirPath)
