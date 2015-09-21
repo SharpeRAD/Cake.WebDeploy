@@ -14,6 +14,7 @@ Cake-Build addin that extends Cake with WebDeploy commands for publishing to IIS
 * Deploy websites from a package or folder
 * Locally / remotely using credentials
 * Outputting the trace information to the cake log
+* Testing changes using WhatIf flag
 
 
 
@@ -53,9 +54,24 @@ Task("Deploy")
 			Password = "pass1"
 		});
 	});
+	
 
+Task("Deploy-Folder")
+    .Description("Deploy to/from folders")
+    .Does(() =>
+	{
+		DeployWebsite(new DeploySettings()
+		{
+			SourcePath = "./src/Website/",
+			DestinationPath = @"C:/src/Websites/Test/",
+			
+			Username = "admin",
+			Password = "pass1"
+		});
+	});
 
-Task("Deploy-Custom")
+	
+Task("Deploy-Url")
     .Description("Deploy to Azure using a custom url")
     .Does(() =>
 	{
@@ -63,6 +79,7 @@ Task("Deploy-Custom")
 		{
 			SourcePath = "./src/Package.zip",
 			PublishUrl = "{WEBSITENAME}.scm.azurewebsites.net",
+			
 			Username = "admin",
 			Password = "pass1"
 		});
@@ -89,6 +106,7 @@ Task("Deploy-WhatIf")
 		DeployWebsite(new DeploySettings()
 		{
 			SourcePath = "./src/Package.zip",
+			
 			Username = "admin",
 			Password = "pass1",
 
@@ -98,6 +116,7 @@ Task("Deploy-WhatIf")
 	});
 
 
+	
 RunTarget("Deploy");
 ```
 
