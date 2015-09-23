@@ -20,5 +20,5 @@ test: off
 # Branches whitelist
 branches:
   only:
+    - master
     - develop
-    - main
