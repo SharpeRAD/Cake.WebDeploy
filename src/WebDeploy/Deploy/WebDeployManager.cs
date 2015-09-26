@@ -106,6 +106,13 @@ namespace Cake.WebDeploy
                         destPath += "/" + settings.DestinationPath.FullPath;
                     }
                 }
+                //When a SiteName is given but no DestinationPath
+                else if (!String.IsNullOrWhiteSpace(settings.SiteName))
+                {
+                    //use ContentPath so it gets deployed to the Path of the named website in IIS
+                    //which is the same behaviour as in Visual Studio
+                    destProvider = DeploymentWellKnownProvider.ContentPath;
+                }
 
 
 
