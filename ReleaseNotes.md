@@ -1,3 +1,8 @@
+### New in 0.0.9 (Released 2015/09/24)
+* Bug fix for deploying to named website path
+* Build WebDeploy and TestSite together
+* Added basic unit-tests
+
 ### New in 0.0.8 (Released 2015/09/18)
 * Bug fix for extensionless source paths
 * Complete documentation

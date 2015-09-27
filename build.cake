@@ -32,13 +32,15 @@ var semVersion = local ? version : (version + string.Concat("-build-", buildNumb
 
 // Define directories.
 var buildDir = "./src/WebDeploy/bin/" + configuration;
+var buildTestDir = "./src/WebDeploy.Tests/bin/" + configuration;
+
 var buildResultDir = "./build/v" + semVersion;
 var testResultsDir = buildResultDir + "/test-results";
 var nugetRoot = buildResultDir + "/nuget";
 var binDir = buildResultDir + "/bin";
 
 //Get Solutions
-var solutions       = GetFiles("./src/WebDeploy.sln");
+var solutions       = GetFiles("./src/*.sln");
 
 
 
@@ -83,7 +85,9 @@ Task("Clean")
 	Information("Cleaning old files");
 	CleanDirectories(new DirectoryPath[] 
 	{
-        buildResultDir, binDir, testResultsDir, nugetRoot
+        buildDir, buildTestDir,
+        buildResultDir, 
+        binDir, testResultsDir, nugetRoot
 	});
 });
 
@@ -132,6 +136,7 @@ Task("Build")
 		MSBuild(solution, settings => 
 			settings.SetPlatformTarget(PlatformTarget.MSIL)
 				.WithProperty("TreatWarningsAsErrors","true")
+                .WithProperty("DeployOnBuild","true")
 				.WithTarget("Build")
 				.SetConfiguration(configuration));
     }

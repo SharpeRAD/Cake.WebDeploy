@@ -5,8 +5,9 @@
 //------------------------------------------------------------------------------
 using System.Reflection;
 
-[assembly: AssemblyProduct("Cake WebDeploy")]
-[assembly: AssemblyVersion("0.0.4")]
-[assembly: AssemblyFileVersion("0.0.4")]
-[assembly: AssemblyInformationalVersion("0.0.4")]
+[assembly: AssemblyProduct("Cake.WebDeploy")]
+[assembly: AssemblyVersion("0.0.9")]
+[assembly: AssemblyFileVersion("0.0.9")]
+[assembly: AssemblyInformationalVersion("0.0.9")]
 [assembly: AssemblyCopyright("Copyright (c) Phillip Sharpe 2015")]
+

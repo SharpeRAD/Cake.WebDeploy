@@ -1,12 +1,7 @@
 ﻿#region Using Statements
-    using System;
     using System.IO;
-    using System.Collections.Generic;
 
     using Cake.Core;
-    using Cake.Core.IO;
-    using Cake.Core.Diagnostics;
-    using Cake.WebDeploy;
 
     using NSubstitute;
 #endregion
@@ -21,9 +16,16 @@ namespace Cake.WebDeploy.Tests
             public static ICakeEnvironment CreateEnvironment()
             {
                 var environment = Substitute.For<ICakeEnvironment>();
+
                 environment.WorkingDirectory = Directory.GetCurrentDirectory();
+                environment.WorkingDirectory = environment.WorkingDirectory.Combine("../../../../");
 
                 return environment;
+            }
+
+            public static IWebDeployManager CreateWebDeployManager()
+            {
+                return new WebDeployManager(CakeHelper.CreateEnvironment(), new DebugLog());
             }
         #endregion
     }

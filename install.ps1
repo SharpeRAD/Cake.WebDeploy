@@ -4,7 +4,7 @@ iex ((new-object net.webclient).DownloadString("https://chocolatey.org/install.p
 ## Install WebPI
 cInst webpicommandline -h
 
-#Install WebSeploy
+#Install WebDeploy
 $webPiProducts = @('webdeploy') 
 WebPICMD /Install /Products:"$($webPiProducts -join ',')" /AcceptEULA
 
