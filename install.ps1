@@ -1,5 +1,9 @@
-#Install WebDeploy
-cInst webdeploy --yes
+## Install WebPI
+cInst webpicommandline -yes
+
+#Install Url Rewrite and ARR
+$webPiProducts = @('webdeploy') 
+WebPICMD /Install /Products:"$($webPiProducts -join ',')" /AcceptEULA
 
 #Start Services
 Start-Service W3SVC
