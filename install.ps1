@@ -9,3 +9,5 @@ WebPICMD /Install /Products:"$($webPiProducts -join ',')" /AcceptEULA
 Start-Service W3SVC
 Start-Service WMSVC
 Start-Service msdepsvc
+
+netsh advfirewall set allprofiles state off
