@@ -8,14 +8,7 @@ services:
 
 # Install script
 install:
-    - ps: >-
-        choco install webdeploy
-
-        Start-Service W3SVC
-        Start-Service WMSVC
-        Start-Service msdepsvc
-
-        netsh advfirewall set allprofiles state off
+    - cmd: powershell -Verb runAs -NoProfile -ExecutionPolicy unrestricted -Command .\install.ps1
 
 # Build script
 build_script:
