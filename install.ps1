@@ -1,5 +1,5 @@
-#Get Services
-Get-Service
+#Install WebDeploy
+choco install webdeploy
 
 #Start Services
 Start-Service W3SVC
