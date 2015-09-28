@@ -156,7 +156,7 @@ Task("Run-Unit-Tests")
 
 
 Task("Copy-Files")
-    .IsDependentOn("Run-Unit-Tests")
+    .IsDependentOn("Build")
     .Does(() =>
 {
 	CopyFileToDirectory("./lib/Microsoft.Web.Deployment.dll", binDir);
