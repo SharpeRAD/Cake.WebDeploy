@@ -1,13 +1,10 @@
-## Install WebPI
-cInst webpicommandline -yes
-
-#Install Url Rewrite and ARR
-$webPiProducts = @('webdeploy') 
-WebPICMD /Install /Products:"$($webPiProducts -join ',')" /AcceptEULA
+#Get Services
+Get-Service
 
 #Start Services
 Start-Service W3SVC
 Start-Service WMSVC
 Start-Service msdepsvc
 
+#Turn Firewall Off
 netsh advfirewall set allprofiles state off
