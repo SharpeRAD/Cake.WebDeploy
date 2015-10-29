@@ -129,7 +129,7 @@ namespace Cake.WebDeploy
                 throw new ArgumentNullException("settings");
             }
 
-            settings.ComputerName = name;
+            settings.SiteName = name;
             return settings;
         }
 
