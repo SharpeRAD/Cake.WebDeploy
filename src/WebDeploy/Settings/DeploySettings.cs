@@ -1,5 +1,6 @@
 ﻿#region Using Statements
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics;
 
     using Cake.Core.IO;
@@ -14,7 +15,7 @@ namespace Cake.WebDeploy
     /// </summary>
     public class DeploySettings
     {
-        #region Fields (9)
+        #region Fields (10)
             private string _PublishUrl = "";
             private RemoteAgent _AgentType = RemoteAgent.None;
             private bool? _NTLM = null;
@@ -33,6 +34,7 @@ namespace Cake.WebDeploy
 
             private FilePath _SourcePath;
             private FilePath _DestinationPath;
+            private Dictionary<string, string> _Parameters;
         #endregion
 
 
@@ -63,6 +65,7 @@ namespace Cake.WebDeploy
 
                 _SourcePath = null;
                 _DestinationPath = null;
+                _Parameters = new Dictionary<string, string>();
             }
         #endregion
 
@@ -70,7 +73,7 @@ namespace Cake.WebDeploy
 
 
 
-        #region Properties (10)
+        #region Properties (11)
             /// <summary>
             /// Gets or sets the url to publish that package to
             /// </summary>
@@ -312,6 +315,11 @@ namespace Cake.WebDeploy
                     _DestinationPath = value;
                 }
             }
+
+        public Dictionary<string, string> Parameters
+        {
+            get { return _Parameters; }
+        }
         #endregion
     }
 }
