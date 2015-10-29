@@ -1,3 +1,6 @@
+### New in 0.1.1 (Released 2015/10/29)
+* Fix bug in UseSiteName extension
+
 ### New in 0.1.0 (Released 2015/10/24)
 * Remove Cake.Core from nuget
 * Update Nuget packages
