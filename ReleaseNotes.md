@@ -1,3 +1,6 @@
+### New in 0.1.2 (Released 2015/11/03)
+* Add ability to set/override sync parameters
+
 ### New in 0.1.1 (Released 2015/10/29)
 * Fix bug in UseSiteName extension
 
