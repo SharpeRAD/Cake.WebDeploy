@@ -149,6 +149,11 @@ namespace Cake.WebDeploy
 
                 using (var deploymentObject = DeploymentManager.CreateObject(sourceProvider, sourcePath.FullPath, sourceOptions))
                 {
+                    foreach (var kv in settings.Parameters)
+                    {
+                        deploymentObject.SyncParameters[kv.Key].Value = kv.Value;
+                    }
+
                     return deploymentObject.SyncTo(destProvider, destPath, destOptions, syncOptions);
                 }
             }
@@ -187,11 +192,11 @@ namespace Cake.WebDeploy
                     case TraceLevel.Warning:
                         _Log.Warning(e.Message);
                         break;
-                        
+
                     case TraceLevel.Info:
                         _Log.Information(e.Message);
                         break;
-                        
+
                     case TraceLevel.Verbose:
                         _Log.Verbose(e.Message);
                         break;

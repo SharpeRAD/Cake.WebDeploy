@@ -168,7 +168,7 @@ namespace Cake.WebDeploy
             settings.Password = password;
             return settings;
         }
-        
+
 
 
         /// <summary>
@@ -254,6 +254,24 @@ namespace Cake.WebDeploy
             }
 
             settings.DestinationPath = path;
+            return settings;
+        }
+
+        /// <summary>
+        /// Adds the parameter.
+        /// </summary>
+        /// <param name="settings">The publish settings.</param>
+        /// <param name="key">The key.</param>
+        /// <param name="value">The value.</param>
+        /// <returns>The same <see cref="DeploySettings"/> instance so that multiple calls can be chained.</returns>
+        public static DeploySettings AddParameter(this DeploySettings settings, string key, string value)
+        {
+            if (settings == null)
+            {
+                throw new ArgumentNullException("settings");
+            }
+
+            settings.Parameters[key] = value;
             return settings;
         }
 
