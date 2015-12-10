@@ -10,7 +10,7 @@
 namespace Cake.WebDeploy
 {
     /// <summary>
-    /// WebDeploy aliases
+    /// Contains Cake aliases for WebDeploy
     /// </summary>
     [CakeAliasCategory("WebDeploy")]
     [CakeNamespaceImport("Microsoft.Web.Deployment")]

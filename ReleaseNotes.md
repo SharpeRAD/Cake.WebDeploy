@@ -1,3 +1,7 @@
+### New in 0.1.3 (Released 2015/12/10)
+* Add Cake namespace docs
+* Update Cake.Core reference
+
 ### New in 0.1.2 (Released 2015/11/03)
 * Add ability to set/override sync parameters
 
