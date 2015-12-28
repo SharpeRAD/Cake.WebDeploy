@@ -161,6 +161,7 @@ Task("Copy-Files")
 {
     CopyFileToDirectory(buildDir + "/Cake.WebDeploy.dll", binDir);
     CopyFileToDirectory(buildDir + "/Cake.WebDeploy.pdb", binDir);
+    CopyFileToDirectory(buildDir + "/Cake.WebDeploy.xml", binDir);
 
     CopyFileToDirectory("./lib/Microsoft.Web.Deployment.dll", binDir);
 

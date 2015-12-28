@@ -103,7 +103,7 @@ namespace Cake.WebDeploy
         /// Sets the remote port to connect on.
         /// </summary>
         /// <param name="settings">The publish settings.</param>
-        /// <param name="path">The working directory for the process to be started.</param>
+        /// <param name="port">The remote port to connect on</param>
         /// <returns>The same <see cref="DeploySettings"/> instance so that multiple calls can be chained.</returns>
         public static DeploySettings UsePort(this DeploySettings settings, int port)
         {

@@ -20,6 +20,7 @@
    <files>
       <file src="Microsoft.Web.Deployment.dll" target="lib/net45" />
       <file src="Cake.WebDeploy.dll" target="lib/net45" />
+      <file src="Cake.WebDeploy.xml" target="lib/net45" />
       <file src="LICENSE" />
    </files>
 </package>
