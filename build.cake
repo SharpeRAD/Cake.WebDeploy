@@ -182,6 +182,7 @@ Task("Zip-Files")
     .Does(() =>
 {
     var filename = buildResultDir + "/Cake-WebDeploy-v" + semVersion + ".zip";
+
     Zip(binDir, filename);
 });
 
@@ -217,6 +218,7 @@ Task("Upload-AppVeyor-Artifacts")
     .Does(() =>
 {
     var artifact = new FilePath(buildResultDir + "/Cake-WebDeploy-v" + semVersion + ".zip");
+
     AppVeyor.UploadArtifact(artifact);
 }); 
 
@@ -236,10 +238,11 @@ Task("Publish-Nuget")
         throw new InvalidOperationException("Could not resolve Nuget API key.");
     }
 
-    // Get the path to the package.
-    var package = nugetRoot + "/Cake.WebDeploy." + version + ".nupkg";
+
 
     // Push the package.
+    var package = nugetRoot + "/Cake.WebDeploy." + version + ".nupkg";
+
     NuGetPush(package, new NuGetPushSettings 
 	{
         ApiKey = apiKey
@@ -251,7 +254,17 @@ Task("Publish-Nuget")
 Task("Slack")
     .Does(() =>
 {
-    //Get Text
+    // Resolve the API key.
+    var token = EnvironmentVariable("SLACK_TOKEN");
+
+    if(string.IsNullOrEmpty(token)) 
+	{
+        throw new InvalidOperationException("Could not resolve Slack token.");
+    }
+
+
+
+	//Get Text
 	var text = "";
 
     if (isPullRequest)
@@ -263,8 +276,10 @@ Task("Slack")
         text = "Published " + appName + " v" + version;
     }
 
+
+
 	// Post Message
-	var result = Slack.Chat.PostMessage(EnvironmentVariable("SLACK_TOKEN"), "#code", text);
+	var result = Slack.Chat.PostMessage(token, "#code", text);
 
 	if (result.Ok)
 	{
@@ -290,14 +305,19 @@ Task("Package")
 	.IsDependentOn("Zip-Files")
     .IsDependentOn("Create-NuGet-Packages");
 
-Task("Default")
-    .IsDependentOn("Package");
+Task("Publish")
+    .IsDependentOn("Publish-Nuget");
 
 Task("AppVeyor")
     .IsDependentOn("Update-AppVeyor-Build-Number")
     .IsDependentOn("Upload-AppVeyor-Artifacts")
     .IsDependentOn("Publish-Nuget")
     .IsDependentOn("Slack");
+    
+
+
+Task("Default")
+    .IsDependentOn("Package");
 
 
 
