@@ -1,3 +1,6 @@
+### New in 0.1.5 (Released 2016/01/16)
+* Fixed SolutionInfo link
+
 ### New in 0.1.4 (Released 2015/12/28)
 * Add xml documentation
 

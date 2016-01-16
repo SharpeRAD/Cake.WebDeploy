@@ -26,39 +26,39 @@ var solutions       = GetFiles("../src/TestSite.sln");
 ///////////////////////////////////////////////////////////////////////////////
 
 Task("Build")
-	.Description("Publish the website to a zip package")
+    .Description("Publish the website to a zip package")
     .Does(() =>
 {
     // Build all solutions.
     foreach(var solution in solutions)
     {
-		Information("Building {0}", solution);
+        Information("Building {0}", solution);
 
-		//You need to include the 'DeployOnBuild' property to create the publish zip
-		MSBuild(solution, settings => 
-			settings.SetPlatformTarget(PlatformTarget.MSIL)
-				.WithProperty("TreatWarningsAsErrors","true")
-				.WithProperty("DeployOnBuild","true")
-				.WithTarget("Build")
-				.SetConfiguration(configuration));
+        //You need to include the 'DeployOnBuild' property to create the publish zip
+        MSBuild(solution, settings => 
+            settings.SetPlatformTarget(PlatformTarget.MSIL)
+                .WithProperty("TreatWarningsAsErrors","true")
+                .WithProperty("DeployOnBuild","true")
+                .WithTarget("Build")
+                .SetConfiguration(configuration));
     }
 });
 
 Task("Deploy")
-	.IsDependentOn("Build")
-	.Description("Deploy an example website")
-	.Does(() =>
-	{
-		DeployWebsite(new DeploySettings()
-		{
-			SourcePath = "../src/WebDeploy.TestSite/obj/Release/Package/Cake.WebDeploy.TestSite.zip",
-			SiteName = "TestSite",
+    .IsDependentOn("Build")
+    .Description("Deploy an example website")
+    .Does(() =>
+    {
+        DeployWebsite(new DeploySettings()
+        {
+            SourcePath = "../src/WebDeploy.TestSite/obj/Release/Package/Cake.WebDeploy.TestSite.zip",
+            SiteName = "TestSite",
 
-			ComputerName = "remote-location",
-			Username = "admin",
-			Password = "pass1"
-		});
-	});
+            ComputerName = "remote-location",
+            Username = "admin",
+            Password = "pass1"
+        });
+    });
 
 
 
