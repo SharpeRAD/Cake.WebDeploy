@@ -150,13 +150,13 @@ A few pointers for correctly enabling WebDeploy scripting can be found [here](ht
 
 If your looking to manage IIS its worth checking out [Cake.IIS](https://github.com/SharpeRAD/Cake.IIS) or if your running a WebFarm inside AWS then check out [Cake.AWS.ElasticLoadBalancing](https://github.com/SharpeRAD/Cake.AWS.ElasticLoadBalancing).
 
-If your looking for a way to trigger cake tasks based on windows events or at scheduled intervals then check out [Cake.CakeBoss](https://github.com/SharpeRAD/CakeBoss).
+If your looking for a way to trigger cake tasks based on windows events or at scheduled intervals then check out [CakeBoss](https://github.com/SharpeRAD/CakeBoss).
 
 
 
 ## License
 
-Copyright � 2015 - 2016 Phillip Sharpe
+Copyright (c) 2015 - 2016 Phillip Sharpe
 
 Cake.WebDeploy is provided as-is under the MIT license. For more information see [LICENSE](https://github.com/SharpeRAD/Cake.WebDeploy/blob/master/LICENSE).
 
