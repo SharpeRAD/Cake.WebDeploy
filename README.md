@@ -41,7 +41,7 @@ Cake.WebDeploy is available as a nuget package from the package manager console:
 Install-Package Cake.WebDeploy
 ```
 
-or directly in your build script via a cake addin:
+or directly in your build script via a cake addin directive:
 
 ```csharp
 #addin "Cake.WebDeploy"
