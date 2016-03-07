@@ -138,7 +138,11 @@ namespace Cake.WebDeploy
                     WhatIf = settings.WhatIf
                 };
 
-
+                // Add SkipRules 
+                foreach (var rule in settings.SkipRules)
+                {
+                    syncOptions.Rules.Add(new DeploymentSkipRule(rule.Name, rule.SkipAction, rule.ObjectName, rule.AbsolutePath, rule.XPath));
+                }
 
                 //Deploy
                 _Log.Debug(Verbosity.Normal, "Deploying Website...");

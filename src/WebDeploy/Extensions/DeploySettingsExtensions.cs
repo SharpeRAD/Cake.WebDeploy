@@ -275,5 +275,43 @@ namespace Cake.WebDeploy
             return settings;
         }
 
+        /// <summary>
+        /// Adds a <see cref="SkipRule" />.
+        /// </summary>
+        /// <param name="settings">The publish settings.</param>
+        /// <param name="rule">The rule.</param>
+        /// <returns>The same <see cref="DeploySettings"/> instance so that multiple calls can be chained.</returns>
+        public static DeploySettings AddSkipRule(this DeploySettings settings, SkipRule rule)
+        {
+            if (settings == null)
+            {
+                throw new ArgumentNullException("settings");
+            }
+
+            settings.SkipRules.Add(rule);
+            return settings;
+        }
+
+        /// <summary>
+        /// Adds a <see cref="SkipRule" />.
+        /// </summary>
+        /// <param name="settings">The publish settings.</param>
+        /// <param name="name">The name.</param>
+        /// <param name="skipAction">The skipAction.</param>
+        /// <param name="objectName">The objectName.</param>
+        /// <param name="absolutePath">The absolutePath.</param>
+        /// <param name="xpath">The xpath.</param>
+        /// <returns>The same <see cref="DeploySettings"/> instance so that multiple calls can be chained.</returns>
+        public static DeploySettings AddSkipRule(this DeploySettings settings, string name, string skipAction, string objectName, string absolutePath, string xpath = null)
+        {
+            if (settings == null)
+            {
+                throw new ArgumentNullException("settings");
+            }
+
+            settings.SkipRules.Add(new SkipRule(name, skipAction, objectName, absolutePath, xpath));
+            return settings;
+        }
+
     }
 }

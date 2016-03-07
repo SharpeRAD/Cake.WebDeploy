@@ -15,7 +15,7 @@ namespace Cake.WebDeploy
     /// </summary>
     public class DeploySettings
     {
-        #region Fields (10)
+        #region Fields (16)
             private string _PublishUrl = "";
             private RemoteAgent _AgentType = RemoteAgent.None;
             private bool? _NTLM = null;
@@ -35,6 +35,7 @@ namespace Cake.WebDeploy
             private FilePath _SourcePath;
             private FilePath _DestinationPath;
             private Dictionary<string, string> _Parameters;
+            private List<SkipRule> _DeploymentSkipRules;
         #endregion
 
 
@@ -66,6 +67,7 @@ namespace Cake.WebDeploy
                 _SourcePath = null;
                 _DestinationPath = null;
                 _Parameters = new Dictionary<string, string>();
+                _DeploymentSkipRules = new List<SkipRule>();
             }
         #endregion
 
@@ -73,7 +75,7 @@ namespace Cake.WebDeploy
 
 
 
-        #region Properties (11)
+        #region Properties (16)
             /// <summary>
             /// Gets or sets the url to publish that package to
             /// </summary>
@@ -316,10 +318,21 @@ namespace Cake.WebDeploy
                 }
             }
 
-        public Dictionary<string, string> Parameters
-        {
-            get { return _Parameters; }
-        }
+            /// <summary>
+            /// Gets or sets the <see cref="Parameters" />.
+            /// </summary>
+            public Dictionary<string, string> Parameters
+            {
+                get { return _Parameters; }
+            }
+
+            /// <summary>
+            /// Gets or sets the <see cref="SkipRules" />.
+            /// </summary>
+            public List<SkipRule> SkipRules
+            {
+                get { return _DeploymentSkipRules; }
+            }
         #endregion
     }
 }
