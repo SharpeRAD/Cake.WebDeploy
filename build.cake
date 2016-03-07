@@ -272,6 +272,7 @@ Task("Upload-AppVeyor-Artifacts")
 ///////////////////////////////////////////////////////////////////////////////
 
 Task("Slack")
+	.WithCriteria(() => !isPullRequest)
     .Does(() =>
 {
     // Resolve the API key.

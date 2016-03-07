@@ -1,3 +1,6 @@
+### New in 0.1.6 (Released 2016/03/07)
+* Added ability to add SkipRules
+
 ### New in 0.1.5 (Released 2016/01/16)
 * Fixed SolutionInfo link
 
