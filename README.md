@@ -33,7 +33,7 @@ Cake-Build addin that extends Cake with WebDeploy commands for publishing to IIS
 
 ## Referencing
 
-[![NuGet Version](http://img.shields.io/nuget/v/Cake.WebDeploy.svg?style=flat)](https://www.nuget.org/packages/Cake.WebDeploy/) [![NuGet Downloads](http://img.shields.io/nuget/dt/Cake.WebDeploy.svg?style=flat)](https://www.nuget.org/packages/Cake.WebDeploy/)
+[![NuGet Version](http://img.shields.io/nuget/v/Cake.WebDeploy.svg?style=flat)](https://www.nuget.org/packages/Cake.WebDeploy/)
 
 Cake.WebDeploy is available as a nuget package from the package manager console:
 

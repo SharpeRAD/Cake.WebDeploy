@@ -55,7 +55,7 @@ var zipPackage = buildResultDir + "/Cake-WebDeploy-v" + semVersion + ".zip";
 // SETUP / TEARDOWN
 ///////////////////////////////////////////////////////////////////////////////
 
-Setup(() =>
+Setup(context =>
 {
     //Executed BEFORE the first task.
     Information("Building version {0} of {1}.", semVersion, appName);
@@ -68,7 +68,7 @@ Setup(() =>
     });
 });
 
-Teardown(() =>
+Teardown(context =>
 {
     // Executed AFTER the last task.
     Information("Finished building version {0} of {1}.", semVersion, appName);

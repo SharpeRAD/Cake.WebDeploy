@@ -1,3 +1,8 @@
+### New in 0.1.7 (Released 2016/05/17)
+* Add nuget dependencies
+* Update all packages
+* Setup / Teardown with context
+
 ### New in 0.1.6 (Released 2016/03/07)
 * Added ability to add SkipRules
 
