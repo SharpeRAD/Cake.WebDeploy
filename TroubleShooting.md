@@ -20,7 +20,7 @@ Could not connect to the remote computer
 
 ### Solution
 * Make sure the "Web Management Service" and "Web Deployment Agent Service" are installed and running on the remote computer.
-* By default WebDeploy will connect on port 8172 so chek any firewall restrictions between you and the remote computer.
+* By default WebDeploy will connect on port 8172 so check any firewall restrictions between you and the remote computer.
 
 
 
