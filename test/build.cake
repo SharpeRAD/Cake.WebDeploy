@@ -22,6 +22,20 @@ var solutions       = GetFiles("../src/TestSite.sln");
 
 
 ///////////////////////////////////////////////////////////////////////////////
+// SETUP / TEARDOWN
+///////////////////////////////////////////////////////////////////////////////
+
+Setup(context =>
+{
+    //Executed BEFORE the first task.
+    Information("Tools dir: {0}.", EnvironmentVariable("CAKE_PATHS_TOOLS"));
+});
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
 // TASK DEFINITIONS
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -35,7 +49,7 @@ Task("Build")
         Information("Building {0}", solution);
 
         //You need to include the 'DeployOnBuild' property to create the publish zip
-        MSBuild(solution, settings => 
+        MSBuild(solution, settings =>
             settings.SetPlatformTarget(PlatformTarget.MSIL)
                 .WithProperty("TreatWarningsAsErrors","true")
                 .WithProperty("DeployOnBuild","true")
