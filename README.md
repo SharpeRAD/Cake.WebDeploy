@@ -144,6 +144,8 @@ A complete Cake example can be found [here](https://github.com/SharpeRAD/Cake.We
 
 A few pointers for correctly enabling WebDeploy scripting can be found [here](https://github.com/SharpeRAD/Cake.WebDeploy/blob/master/TroubleShooting.md).
 
+Please appreciate that this project is  a wrapper for WebDeploy, so before raising an issue please ensure you can perform the task using WebDeploy directly. Microsoft has loads of [great articles](https://www.iis.net/learn/publish/using-web-deploy) on WebDploy on the IIS website.
+
 
 
 ## Plays well with
