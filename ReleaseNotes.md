@@ -1,3 +1,6 @@
+### New in 0.1.8 (Released 2016/10/26)
+* Fix AddParameter extension
+
 ### New in 0.1.7 (Released 2016/05/17)
 * Add nuget dependencies
 * Update all packages

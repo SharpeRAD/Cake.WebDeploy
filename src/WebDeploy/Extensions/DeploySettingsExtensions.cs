@@ -271,7 +271,15 @@ namespace Cake.WebDeploy
                 throw new ArgumentNullException("settings");
             }
 
-            settings.Parameters[key] = value;
+            if (settings.Parameters.ContainsKey(key))
+            {
+                settings.Parameters[key] = value;
+            }
+            else
+            {
+                settings.Parameters.Add(key, value);
+            }
+
             return settings;
         }
 
