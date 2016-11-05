@@ -155,7 +155,17 @@ namespace Cake.WebDeploy
                 {
                     foreach (var kv in settings.Parameters)
                     {
-                        deploymentObject.SyncParameters[kv.Key].Value = kv.Value;
+                        if (deploymentObject.SyncParameters.Contains(kv.Key))
+                        {
+                            deploymentObject.SyncParameters[kv.Key].Value = kv.Value;
+                        }
+                        else
+                        {
+                            deploymentObject.SyncParameters.Add(new DeploymentSyncParameter(kv.Key, kv.Key, "", "")
+                            {
+                                Value = kv.Value
+                            });
+                        }
                     }
 
                     return deploymentObject.SyncTo(destProvider, destPath, destOptions, syncOptions);

@@ -1,3 +1,6 @@
+### New in 0.2.0 (Released 2016/1`/05)
+* Fix AddParameter extension (take 2)
+
 ### New in 0.1.8 (Released 2016/10/26)
 * Fix AddParameter extension
 
