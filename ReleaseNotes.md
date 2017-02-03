@@ -1,3 +1,6 @@
+### New in 0.2.0 (Released 2017/02/03)
+* Update Cake.Core reference
+
 ### New in 0.1.9 (Released 2016/10/05)
 * Fix AddParameter extension (take 2)
 
