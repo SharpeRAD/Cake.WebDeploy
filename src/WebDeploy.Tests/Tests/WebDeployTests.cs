@@ -32,6 +32,8 @@ namespace Cake.WebDeploy.Tests
             settings.NTLM = true;
 
             settings.SourcePath = "./src/WebDeploy.TestSite/obj/Release/Package/Cake.WebDeploy.TestSite.zip";
+            settings.ParametersFilePath = "./src/WebDeploy.TestSite/obj/Release/Package/Cake.WebDeploy.SetParameters.xml";
+
 
             manager.Deploy(settings);
 

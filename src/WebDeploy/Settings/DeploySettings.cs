@@ -34,6 +34,7 @@ namespace Cake.WebDeploy
 
             private FilePath _SourcePath;
             private FilePath _DestinationPath;
+            private FilePath _ParametersFilePath;
             private Dictionary<string, string> _Parameters;
             private List<SkipRule> _DeploymentSkipRules;
         #endregion
@@ -66,6 +67,7 @@ namespace Cake.WebDeploy
 
                 _SourcePath = null;
                 _DestinationPath = null;
+                _ParametersFilePath = null;
                 _Parameters = new Dictionary<string, string>();
                 _DeploymentSkipRules = new List<SkipRule>();
             }
@@ -315,6 +317,21 @@ namespace Cake.WebDeploy
                 set
                 {
                     _DestinationPath = value;
+                }
+            }
+
+            /// <summary>
+            /// Gets or sets the location of the SetParameters.xml file
+            /// </summary>
+            public FilePath ParametersFilePath
+            {
+                get
+                {
+                    return _ParametersFilePath;
+                }
+                set
+                {
+                    _ParametersFilePath = value;
                 }
             }
 
