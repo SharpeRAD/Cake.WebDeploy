@@ -129,6 +129,22 @@ namespace Cake.WebDeploy
                     sourceProvider = DeploymentWellKnownProvider.Package;
                 }
 
+                // If a parameters file was specified then read the file in and add the parameters
+                if (settings.ParametersFilePath != null)
+                {
+                    FilePath parametersFile = settings.ParametersFilePath.MakeAbsolute(_Environment);
+                    if (System.IO.File.Exists(parametersFile.FullPath))
+                    {
+                        System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
+                        doc.Load(parametersFile.FullPath);
+
+                        System.Xml.XmlNodeList nodes = doc.SelectNodes("/parameters/setParameter");
+                        foreach (System.Xml.XmlElement node in nodes)
+                        {
+                            settings.AddParameter(node.GetAttribute("name"), node.GetAttribute("value"));
+                        }
+                    }
+                }
 
 
                 //Sync Options
