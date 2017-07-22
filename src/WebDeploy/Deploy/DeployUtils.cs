@@ -17,7 +17,7 @@ namespace Cake.WebDeploy
 
 
 
-        #region Functions (3)
+        #region Functions (4)
             internal static string GetWmsvcUrl(string computerName, int port, string siteName)
             {
                 if (!computerName.StartsWith("http", StringComparison.OrdinalIgnoreCase))
@@ -28,23 +28,16 @@ namespace Cake.WebDeploy
                     // foo.com:443
                     // foo.com
 
-                    computerName = DeployUtils.InsertPortIfNotSpecified(computerName, port);
+                    computerName = DeployUtils.AppendHttpsIfNotSpecified(computerName);
+                    computerName = DeployUtils.AppendPortIfNotSpecified(computerName, port);
                     computerName = DeployUtils.AppendHandlerIfNotSpecified(computerName);
-
-                    if (!string.IsNullOrEmpty(siteName))
-                    {
-                        //Site
-                        computerName = string.Format("https://{0}?site={1}", computerName, siteName);
-                    }
-                    else
-                    {
-                        //Root
-                        computerName = string.Format("https://{0}", computerName);
-                    }
+                    computerName = DeployUtils.AppendSiteIfNotSpecified(computerName, siteName);
                 }
 
                 return computerName;
             }
+
+
 
             internal static string AppendHandlerIfNotSpecified(string publishUrl)
             {
@@ -63,7 +56,7 @@ namespace Cake.WebDeploy
                 return publishUrl;
             }
 
-            internal static string InsertPortIfNotSpecified(string publishUrl, int port)
+            internal static string AppendPortIfNotSpecified(string publishUrl, int port)
             {
                 string[] colonParts = publishUrl.Split(new char[] { ':' });
 
@@ -107,6 +100,41 @@ namespace Cake.WebDeploy
                 }
 
                 return publishUrl;
+            }
+
+            internal static string AppendHttpsIfNotSpecified(string publishUrl)
+            {
+                if (!publishUrl.ToLower().Contains("https://"))
+                {
+                    return string.Format("https://{0}", publishUrl);
+                }
+                else
+                {
+                    return publishUrl;
+                }
+            }
+
+            internal static string AppendSiteIfNotSpecified(string publishUrl, string siteName)
+            {
+                int markIndex = publishUrl.IndexOf('?');
+
+                if ((markIndex > -1) && (markIndex < (publishUrl.Length - 1)))
+                {
+                    string queryString = publishUrl.Substring(markIndex + 1);
+
+                    if (!queryString.ToLower().Contains("site=" + siteName.ToLower()))
+                    {
+                        return string.Format("{0}&site={1}", publishUrl, siteName);
+                    }
+                    else
+                    {
+                        return publishUrl;
+                    }
+                }
+                else
+                {
+                    return string.Format("{0}?site={1}", publishUrl, siteName);
+                }
             }
         #endregion
     }

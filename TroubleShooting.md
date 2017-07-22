@@ -1,5 +1,8 @@
 # WebDeploy Troubleshooting
 
+https://docs.microsoft.com/en-us/iis/publish/troubleshooting-web-deploy/troubleshooting-web-deploy
+https://docs.microsoft.com/en-us/iis/publish/troubleshooting-web-deploy/troubleshooting-common-problems-with-web-deploy
+
 
 
 ### Error message
@@ -32,3 +35,13 @@ Connected to the remote computer using Web Manage Service, but could not authori
 ### Solution
 * Check the DeploySettings credentials against the "IIS Manager Users" section in IIS on the remote machine.
 * Check the "IIS Manager Permissions" section of IIS for the site your publishing to has an entry for the user your connecting with.
+
+
+
+### Error message
+```
+Microsoft.Web.Deployment.DeploymentException: Source (sitemanifest) and destination (contentPath) are not compatible for the given operation.
+```
+
+### Solution
+* The settings you are passing to WebDeploy contradict the settings inside the packages manifest file. Remove the settings from the manifest file or use the same settings when calling WebDeploy (eg: use DestinationPath over siteName).
