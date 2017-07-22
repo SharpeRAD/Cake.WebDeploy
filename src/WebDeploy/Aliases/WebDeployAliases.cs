@@ -1,8 +1,8 @@
 ﻿#region Using Statements
-    using Cake.Core;
-    using Cake.Core.Annotations;
+using Cake.Core;
+using Cake.Core.Annotations;
 
-    using Microsoft.Web.Deployment;
+using Microsoft.Web.Deployment;
 #endregion
 
 
@@ -16,6 +16,7 @@ namespace Cake.WebDeploy
     [CakeNamespaceImport("Microsoft.Web.Deployment")]
     public static class WebDeployAliases
     {
+        #region Methods (1)
         /// <summary>
         /// Deploys the content of a website
         /// </summary>
@@ -27,5 +28,6 @@ namespace Cake.WebDeploy
         {
             return new WebDeployManager(context.Environment, context.Log).Deploy(settings);
         }
+        #endregion
     }
 }

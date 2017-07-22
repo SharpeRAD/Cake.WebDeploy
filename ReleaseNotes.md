@@ -1,3 +1,7 @@
+### New in 0.2.2 (Released 2017/07/22)
+* [Improvement] Use CakeContrib icon
+* [Improvement] Remove region indentation
+
 ### New in 0.2.1 (Released 2017/03/27)
 * [Feature] Support ParametersFile
 

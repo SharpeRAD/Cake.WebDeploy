@@ -1,7 +1,7 @@
 ﻿#region Using Statements
-    using System.IO;
+using System.IO;
 
-    using Xunit;
+using Xunit;
 #endregion
 
 
@@ -10,6 +10,7 @@ namespace Cake.WebDeploy.Tests
 {
     public class WebDeployTests
     {
+        #region Methods (2)
         [Fact]
         public void Should_Deploy_Website_At_Default_Path()
         {
@@ -76,5 +77,6 @@ namespace Cake.WebDeploy.Tests
             //Asert
             Assert.True(File.Exists(deployDir + "web.config"));
         }
+        #endregion
     }
 }

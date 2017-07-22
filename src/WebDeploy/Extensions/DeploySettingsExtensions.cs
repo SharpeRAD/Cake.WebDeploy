@@ -1,6 +1,6 @@
 ﻿#region Using Statements
-    using System;
-    using System.Diagnostics;
+using System;
+using System.Diagnostics;
 #endregion
 
 
@@ -12,6 +12,7 @@ namespace Cake.WebDeploy
     /// </summary>
     public static class DeploySettingsExtensions
     {
+        #region Methods (17)
         /// <summary>
         /// Sets the url to publish that package to
         /// </summary>
@@ -223,6 +224,7 @@ namespace Cake.WebDeploy
         }
 
 
+
         /// <summary>
         /// Sets the source of the package to publish
         /// </summary>
@@ -320,6 +322,6 @@ namespace Cake.WebDeploy
             settings.SkipRules.Add(new SkipRule(name, skipAction, objectName, absolutePath, xpath));
             return settings;
         }
-
+        #endregion
     }
 }
