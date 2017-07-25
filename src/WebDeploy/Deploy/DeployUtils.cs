@@ -28,8 +28,8 @@ namespace Cake.WebDeploy
                 // foo.com:443
                 // foo.com
 
-                computerName = DeployUtils.AppendHttpsIfNotSpecified(computerName);
                 computerName = DeployUtils.AppendPortIfNotSpecified(computerName, port);
+                computerName = DeployUtils.AppendHttpsIfNotSpecified(computerName);
                 computerName = DeployUtils.AppendHandlerIfNotSpecified(computerName);
                 computerName = DeployUtils.AppendSiteIfNotSpecified(computerName, siteName);
             }

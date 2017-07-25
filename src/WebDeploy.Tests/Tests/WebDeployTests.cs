@@ -77,6 +77,22 @@ namespace Cake.WebDeploy.Tests
             //Asert
             Assert.True(File.Exists(deployDir + "web.config"));
         }
+
+
+
+        [Fact]
+        public void Should_Append_Port()
+        {
+            DeploySettings settings = new DeploySettings()
+                .SetAllowUntrusted(true)
+                .FromSourcePath("./deployment/PATH")
+                .UseSiteName("Test").UsePort(8172)
+                .UseComputerName("XXX")
+                .UseUsername(@"YYY")
+                .UsePassword("ZZZ");
+
+            Assert.Equal(settings.PublishUrl, "https://XXX:8172/msdeploy.axd?site=Test");
+        }
         #endregion
     }
 }

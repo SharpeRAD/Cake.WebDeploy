@@ -1,3 +1,6 @@
+### New in 0.2.3 (Released 2017/07/25)
+* [Bug] Not appending port
+
 ### New in 0.2.2 (Released 2017/07/22)
 * [Improvement] Use CakeContrib icon
 * [Improvement] Remove region indentation
