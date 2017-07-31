@@ -322,6 +322,23 @@ namespace Cake.WebDeploy
             settings.SkipRules.Add(new SkipRule(name, skipAction, objectName, absolutePath, xpath));
             return settings;
         }
+
+        /// <summary>
+        /// Sets if deployment compares each file using a checksum value instead of datetime
+        /// </summary>
+        /// <param name="settings">The publish settings.</param>
+        /// <param name="useChecksum">The useChecksum</param>
+        /// <returns>The same <see cref="DeploySettings"/> instance so that multiple calls can be chained.</returns>
+        public static DeploySettings UseChecksum(this DeploySettings settings, bool useChecksum)
+        {
+            if (settings == null)
+            {
+                throw new ArgumentNullException("settings");
+            }
+
+            settings.UseChecksum = useChecksum;
+            return settings;
+        }
         #endregion
     }
 }
