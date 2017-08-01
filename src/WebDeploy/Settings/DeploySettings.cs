@@ -31,6 +31,7 @@ namespace Cake.WebDeploy
         private TraceLevel _TraceLevel;
         private bool _Delete;
         private bool _WhatIf;
+        private bool _UseChecksum;
 
         private FilePath _SourcePath;
         private FilePath _DestinationPath;
@@ -64,6 +65,7 @@ namespace Cake.WebDeploy
             _TraceLevel = TraceLevel.Info;
             _Delete = true;
             _WhatIf = false;
+            _UseChecksum = false;
 
             _SourcePath = null;
             _DestinationPath = null;
@@ -288,6 +290,21 @@ namespace Cake.WebDeploy
             }
         }
 
+
+            /// <summary>
+            /// Gets or sets if deployment compares each file using a checksum value instead of datetime
+            /// </summary>
+            public bool UseChecksum
+            {
+                get
+                {
+                    return _UseChecksum;
+                }
+                set
+                {
+                    _UseChecksum = value;
+                }
+            }
 
 
         /// <summary>

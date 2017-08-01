@@ -151,7 +151,8 @@ namespace Cake.WebDeploy
             DeploymentSyncOptions syncOptions = new DeploymentSyncOptions
             {
                 DoNotDelete = !settings.Delete,
-                WhatIf = settings.WhatIf
+                WhatIf = settings.WhatIf,
+                UseChecksum = settings.UseChecksum
             };
 
             // Add SkipRules 
