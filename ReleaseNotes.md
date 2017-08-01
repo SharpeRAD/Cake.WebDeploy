@@ -1,3 +1,6 @@
+### New in 0.2.4 (Released 2017/08/01)
+* [Improvement] Checksum instead of timestamp sync option
+
 ### New in 0.2.3 (Released 2017/07/25)
 * [Bug] Not appending port
 
