@@ -374,8 +374,8 @@ namespace Cake.WebDeploy
         /// </summary>
         public bool UseAppOffline
         {
-            get => _UseAppOffline;
-            set => _UseAppOffline = value;
+            get { return _UseAppOffline; }
+            set { _UseAppOffline = value; }
         }
 
         #endregion

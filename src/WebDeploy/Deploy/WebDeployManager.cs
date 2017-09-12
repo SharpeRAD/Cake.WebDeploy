@@ -195,7 +195,8 @@ namespace Cake.WebDeploy
         private void AddRule(DeploymentSyncOptions syncOptions, string ruleName)
         {
             var rules = DeploymentSyncOptions.GetAvailableRules();
-            if(rules.TryGetValue(ruleName, out var newRule))
+            DeploymentRule newRule;
+            if(rules.TryGetValue(ruleName, out newRule))
             {
                 syncOptions.Rules.Add(newRule);
             }
