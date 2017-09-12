@@ -339,6 +339,15 @@ namespace Cake.WebDeploy
             settings.UseChecksum = useChecksum;
             return settings;
         }
+
+        public static DeploySettings UseAppOffline(this DeploySettings settings, bool useAppOffline)
+        {
+            if (settings == null)
+                throw new ArgumentNullException(nameof(settings));
+
+            settings.UseAppOffline = useAppOffline;
+            return settings;
+        }
         #endregion
     }
 }

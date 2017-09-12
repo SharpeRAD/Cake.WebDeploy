@@ -38,6 +38,8 @@ namespace Cake.WebDeploy
         private FilePath _ParametersFilePath;
         private Dictionary<string, string> _Parameters;
         private List<SkipRule> _DeploymentSkipRules;
+        private bool _UseAppOffline;
+
         #endregion
 
 
@@ -72,11 +74,10 @@ namespace Cake.WebDeploy
             _ParametersFilePath = null;
             _Parameters = new Dictionary<string, string>();
             _DeploymentSkipRules = new List<SkipRule>();
+
+            _UseAppOffline = false;
         }
         #endregion
-
-
-
 
 
         #region Properties (16)
@@ -367,6 +368,16 @@ namespace Cake.WebDeploy
         {
             get { return _DeploymentSkipRules; }
         }
+
+        /// <summary>
+        /// Gets or sets the AppOffline rule
+        /// </summary>
+        public bool UseAppOffline
+        {
+            get => _UseAppOffline;
+            set => _UseAppOffline = value;
+        }
+
         #endregion
     }
 }
