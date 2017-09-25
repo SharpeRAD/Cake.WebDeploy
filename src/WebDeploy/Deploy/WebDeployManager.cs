@@ -154,6 +154,8 @@ namespace Cake.WebDeploy
                 WhatIf = settings.WhatIf,
                 UseChecksum = settings.UseChecksum
             };
+            if (settings.UseAppOffline)
+                AddRule(syncOptions, "appOffline");
 
             // Add SkipRules 
             foreach (var rule in settings.SkipRules)
@@ -189,9 +191,17 @@ namespace Cake.WebDeploy
             }
         }
 
-
-
         //Helpers
+        private void AddRule(DeploymentSyncOptions syncOptions, string ruleName)
+        {
+            var rules = DeploymentSyncOptions.GetAvailableRules();
+            DeploymentRule newRule;
+            if(rules.TryGetValue(ruleName, out newRule))
+            {
+                syncOptions.Rules.Add(newRule);
+            }
+        }
+
         private DeploymentBaseOptions GetBaseOptions(DeploySettings settings)
         {
             DeploymentBaseOptions options = new DeploymentBaseOptions

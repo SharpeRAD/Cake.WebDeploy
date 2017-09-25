@@ -93,6 +93,18 @@ namespace Cake.WebDeploy.Tests
 
             Assert.Equal(settings.PublishUrl, "https://XXX:8172/msdeploy.axd?site=Test");
         }
+
+        [Fact]
+        public void Should_Use_AppOffline()
+        {
+            DeploySettings deploySettings = new DeploySettings();
+
+            Assert.Equal(false, deploySettings.UseAppOffline);
+
+            deploySettings.UseAppOffline(true);
+
+            Assert.Equal(true, deploySettings.UseAppOffline);
+        }
         #endregion
     }
 }
