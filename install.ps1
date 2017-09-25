@@ -1,5 +1,5 @@
 #Install WebDeploy
-webpicmd /install /Products:WDeployNoSMO /AcceptEULA
+webpicmd /install /Products:WDeploy36 /AcceptEULA
 
 #Start Services
 Start-Service W3SVC
