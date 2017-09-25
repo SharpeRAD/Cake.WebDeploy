@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{805059EC-6CC4-418B-B0ED-E40A21145526}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\appveyor.yml = ..\appveyor.yml
+		..\build.cake = ..\build.cake
+		..\install.ps1 = ..\install.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{EA42D027-E363-4943-ABED-1F3C37FD6CA5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{1DE4B19B-DCA5-4F17-98FA-60CCE64A0C20}"
+	ProjectSection(SolutionItems) = preProject
+		..\nuspec\Cake.WebDeploy.nuspec = ..\nuspec\Cake.WebDeploy.nuspec
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{307216F2-D982-4935-8BF1-842114D14545}"
+	ProjectSection(SolutionItems) = preProject
+		..\test\build.cake = ..\test\build.cake
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{23704DC0-E2D6-47C3-9E11-2A1D8E497980}"
+	ProjectSection(SolutionItems) = preProject
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+		..\ReleaseNotes.md = ..\ReleaseNotes.md
+		..\TroubleShooting.md = ..\TroubleShooting.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.WebDeploy", "Cake.WebDeploy\Cake.WebDeploy.csproj", "{20D4A416-041E-4AF1-86B3-6A482E051D98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.WebDeploy.Tests", "Cake.WebDeploy.Tests\Cake.WebDeploy.Tests.csproj", "{ADCC379D-4F25-40B0-91E3-5A072962DBEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20D4A416-041E-4AF1-86B3-6A482E051D98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20D4A416-041E-4AF1-86B3-6A482E051D98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20D4A416-041E-4AF1-86B3-6A482E051D98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20D4A416-041E-4AF1-86B3-6A482E051D98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADCC379D-4F25-40B0-91E3-5A072962DBEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADCC379D-4F25-40B0-91E3-5A072962DBEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADCC379D-4F25-40B0-91E3-5A072962DBEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADCC379D-4F25-40B0-91E3-5A072962DBEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{20D4A416-041E-4AF1-86B3-6A482E051D98} = {EA42D027-E363-4943-ABED-1F3C37FD6CA5}
+		{ADCC379D-4F25-40B0-91E3-5A072962DBEA} = {EA42D027-E363-4943-ABED-1F3C37FD6CA5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {01E05E41-D413-4012-834A-4C092B580EBC}
+	EndGlobalSection
+EndGlobal

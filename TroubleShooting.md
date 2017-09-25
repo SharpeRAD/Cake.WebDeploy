@@ -7,6 +7,17 @@ https://docs.microsoft.com/en-us/iis/publish/troubleshooting-web-deploy/troubles
 
 ### Error message
 ```
+Error: Failed to install addin 'Cake.Powershell'
+Could not find any assemblies compatible with .NETFramework, Version=4.5
+```
+
+### Solution
+* Please be aware of the breaking changes that occurred with the release of [Cake v0.22.0](https://cakebuild.net/blog/2017/09/cake-v0.22.0-released), as a result you will need to upgrade Cake in order to use Cake.WebDeploy [v0.3.0] or above.
+
+
+
+### Error message
+```
 Could not load file or assembly 'Microsoft.Web.Deployment, Version=9.0.0.0, Culture=Neutral, PubliKeyToken=31bf3856ad364e35 or one of its dependencies. The system can not find the file specified.
 ```
 

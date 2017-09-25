@@ -142,10 +142,10 @@ A complete Cake example can be found [here](https://github.com/SharpeRAD/Cake.We
 
 ## TroubleShooting
 
+* Please be aware of the breaking changes that occurred with the release of [Cake v0.22.0](https://cakebuild.net/blog/2017/09/cake-v0.22.0-released), as a result you will need to upgrade Cake in order to use Cake.WebDeploy [v0.3.0] or above.
+* Please appreciate that this project is a wrapper for MS WebDeploy, so before raising an issue please ensure you can perform the task using MS WebDeploy directly. Microsoft has loads of [great articles](https://www.iis.net/learn/publish/using-web-deploy) on WebDeploy on the IIS website.
+
 A few pointers for correctly enabling WebDeploy scripting can be found [here](https://github.com/SharpeRAD/Cake.WebDeploy/blob/master/TroubleShooting.md).
-
-Please appreciate that this project is a wrapper for MS WebDeploy, so before raising an issue please ensure you can perform the task using MS WebDeploy directly. Microsoft has loads of [great articles](https://www.iis.net/learn/publish/using-web-deploy) on WebDeploy on the IIS website.
-
 
 
 ## Plays well with

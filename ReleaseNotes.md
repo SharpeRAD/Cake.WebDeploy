@@ -1,3 +1,9 @@
+### New in 0.3.0 (Released 2017/09/25)
+* [Improvement] Updated Cake reference to v0.22.0
+* [Improvement] Moved to net461 for Cake compatibility
+* [Improvement] Upgraded solution to vs2017
+* [Improvement] New .net core based build scripts
+
 ### New in 0.2.4 (Released 2017/08/01)
 * [Improvement] Checksum instead of timestamp sync option
 

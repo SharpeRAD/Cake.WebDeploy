@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <AssemblyTitle>Cake.WebDeploy</AssemblyTitle>
+        <AssemblyName>Cake.WebDeploy</AssemblyName>
+        <PackageId>Cake.WebDeploy</PackageId>
+        <OutputType>Library</OutputType>
+
+        <TargetFrameworks>net461</TargetFrameworks>
+
+        <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+        <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+        <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+        <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+        <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <DocumentationFile>bin\Debug\net461\Cake.WebDeploy.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Cake.Core" Version="0.22.0" />
+
+        <PackageReference Include="Microsoft.Web.Deployment" Version="3.6.0" />
+    </ItemGroup>
+</Project>

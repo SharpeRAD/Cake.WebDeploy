@@ -17,14 +17,14 @@
       <tags>Cake Script Build WebDeploy</tags>
 
        <dependencies>
-           <dependency id="Cake.Core" version="0.11.0" />
+           <dependency id="Cake.Core" version="0.22.0" />
        </dependencies>
    </metadata>
 
    <files>
-      <file src="Microsoft.Web.Deployment.dll" target="lib/net45" />
-      <file src="Cake.WebDeploy.dll" target="lib/net45" />
-      <file src="Cake.WebDeploy.xml" target="lib/net45" />
+      <file src="net461/Microsoft.Web.Deployment.dll" target="lib/net461" />
+      <file src="net461/Cake.WebDeploy.dll" target="lib/net461" />
+      <file src="net461/Cake.WebDeploy.xml" target="lib/net461" />
       <file src="LICENSE" />
    </files>
 </package>
