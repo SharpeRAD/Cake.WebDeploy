@@ -1,5 +1,5 @@
 #Install WebDeploy
-webpicmd /install /Products:WDeploy36 /AcceptEULA
+choco install webdeploy -y
 
 #Start Services
 Start-Service W3SVC
