@@ -1,0 +1,8 @@
+C:\Projects\Cake\Cake.WebDeploy\src\Cake.WebDeploy.TestSite\bin\Release\netcoreapp1.1\Cake.WebDeploy.TestSite.deps.json
+C:\Projects\Cake\Cake.WebDeploy\src\Cake.WebDeploy.TestSite\bin\Release\netcoreapp1.1\Cake.WebDeploy.TestSite.runtimeconfig.json
+C:\Projects\Cake\Cake.WebDeploy\src\Cake.WebDeploy.TestSite\bin\Release\netcoreapp1.1\Cake.WebDeploy.TestSite.runtimeconfig.dev.json
+C:\Projects\Cake\Cake.WebDeploy\src\Cake.WebDeploy.TestSite\bin\Release\netcoreapp1.1\Cake.WebDeploy.TestSite.dll
+C:\Projects\Cake\Cake.WebDeploy\src\Cake.WebDeploy.TestSite\bin\Release\netcoreapp1.1\Cake.WebDeploy.TestSite.pdb
+C:\Projects\Cake\Cake.WebDeploy\src\Cake.WebDeploy.TestSite\obj\Release\netcoreapp1.1\Cake.WebDeploy.TestSite.AssemblyInfo.cs
+C:\Projects\Cake\Cake.WebDeploy\src\Cake.WebDeploy.TestSite\obj\Release\netcoreapp1.1\Cake.WebDeploy.TestSite.dll
+C:\Projects\Cake\Cake.WebDeploy\src\Cake.WebDeploy.TestSite\obj\Release\netcoreapp1.1\Cake.WebDeploy.TestSite.pdb

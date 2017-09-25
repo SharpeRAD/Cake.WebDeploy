@@ -60,7 +60,7 @@ Task("Build")
 		Verbosity = DotNetCoreVerbosity.Minimal
 	});
 
-
+	
 
 	// Build Solution
 	Information("Building {0}", solution);

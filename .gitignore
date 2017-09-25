@@ -1,6 +1,5 @@
 # Misc folders
 [Bb]in/
-[Oo]bj/
 [Tt]emp/
 [Pp]ackages/
 *.sln.ide/
@@ -10,6 +9,11 @@ build/results/
 tools/
 test/tools/
 node_modules/
+
+
+
+src/Cake.WebDeploy/obj/
+src/Cake.WebDeploy.Tests/obj/
 
 
 
@@ -26,7 +30,6 @@ node_modules/
 
 # Build results
 [Dd]ebug/
-[Rr]elease/
 x64/
 *_i.c
 *_p.c
