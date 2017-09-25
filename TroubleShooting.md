@@ -7,7 +7,7 @@ https://docs.microsoft.com/en-us/iis/publish/troubleshooting-web-deploy/troubles
 
 ### Error message
 ```
-Error: Failed to install addin 'Cake.Powershell'
+Error: Failed to install addin 'Cake.WebDeploy'
 Could not find any assemblies compatible with .NETFramework, Version=4.5
 ```
 
