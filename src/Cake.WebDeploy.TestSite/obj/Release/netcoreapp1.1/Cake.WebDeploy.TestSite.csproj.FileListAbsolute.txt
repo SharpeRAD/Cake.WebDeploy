@@ -6,3 +6,5 @@ C:\Projects\Cake\Cake.WebDeploy\src\Cake.WebDeploy.TestSite\bin\Release\netcorea
 C:\Projects\Cake\Cake.WebDeploy\src\Cake.WebDeploy.TestSite\obj\Release\netcoreapp1.1\Cake.WebDeploy.TestSite.AssemblyInfo.cs
 C:\Projects\Cake\Cake.WebDeploy\src\Cake.WebDeploy.TestSite\obj\Release\netcoreapp1.1\Cake.WebDeploy.TestSite.dll
 C:\Projects\Cake\Cake.WebDeploy\src\Cake.WebDeploy.TestSite\obj\Release\netcoreapp1.1\Cake.WebDeploy.TestSite.pdb
+C:\Projects\Cake\Cake.WebDeploy\src\Cake.WebDeploy.TestSite\obj\Release\netcoreapp1.1\Cake.WebDeploy.TestSite.csprojResolveAssemblyReference.cache
+C:\Projects\Cake\Cake.WebDeploy\src\Cake.WebDeploy.TestSite\obj\Release\netcoreapp1.1\Cake.WebDeploy.TestSite.csproj.CoreCompileInputs.cache
