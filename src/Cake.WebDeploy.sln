@@ -31,9 +31,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{23704DC0-E
 		..\TroubleShooting.md = ..\TroubleShooting.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.WebDeploy", "Cake.WebDeploy\Cake.WebDeploy.csproj", "{20D4A416-041E-4AF1-86B3-6A482E051D98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cake.WebDeploy", "Cake.WebDeploy\Cake.WebDeploy.csproj", "{20D4A416-041E-4AF1-86B3-6A482E051D98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.WebDeploy.Tests", "Cake.WebDeploy.Tests\Cake.WebDeploy.Tests.csproj", "{ADCC379D-4F25-40B0-91E3-5A072962DBEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cake.WebDeploy.Tests", "Cake.WebDeploy.Tests\Cake.WebDeploy.Tests.csproj", "{ADCC379D-4F25-40B0-91E3-5A072962DBEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.WebDeploy.TestSite", "Cake.WebDeploy.TestSite\Cake.WebDeploy.TestSite.csproj", "{7F5AFD99-D70F-48A6-9A78-FB665FDAD835}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{ADCC379D-4F25-40B0-91E3-5A072962DBEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADCC379D-4F25-40B0-91E3-5A072962DBEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADCC379D-4F25-40B0-91E3-5A072962DBEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F5AFD99-D70F-48A6-9A78-FB665FDAD835}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F5AFD99-D70F-48A6-9A78-FB665FDAD835}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F5AFD99-D70F-48A6-9A78-FB665FDAD835}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F5AFD99-D70F-48A6-9A78-FB665FDAD835}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +62,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{20D4A416-041E-4AF1-86B3-6A482E051D98} = {EA42D027-E363-4943-ABED-1F3C37FD6CA5}
 		{ADCC379D-4F25-40B0-91E3-5A072962DBEA} = {EA42D027-E363-4943-ABED-1F3C37FD6CA5}
+		{7F5AFD99-D70F-48A6-9A78-FB665FDAD835} = {307216F2-D982-4935-8BF1-842114D14545}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {01E05E41-D413-4012-834A-4C092B580EBC}

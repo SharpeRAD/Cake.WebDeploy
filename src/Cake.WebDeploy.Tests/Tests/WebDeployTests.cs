@@ -32,8 +32,8 @@ namespace Cake.WebDeploy.Tests
             settings.SiteName = "Default Web Site";
             settings.NTLM = true;
 
-            settings.SourcePath = "./src/WebDeploy.TestSite/obj/Release/Package/Cake.WebDeploy.TestSite.zip";
-            settings.ParametersFilePath = "./src/WebDeploy.TestSite/obj/Release/Package/Cake.WebDeploy.SetParameters.xml";
+            settings.SourcePath = "./Cake.WebDeploy.TestSite/obj/Release/Package/Cake.WebDeploy.TestSite.zip";
+            settings.ParametersFilePath = "./Cake.WebDeploy.TestSite/obj/Release/Package/Cake.WebDeploy.TestSite.Parameters.xml";
 
 
             manager.Deploy(settings);
@@ -67,7 +67,7 @@ namespace Cake.WebDeploy.Tests
             settings.SiteName = "Default Web Site";
             settings.NTLM = true;
 
-            settings.SourcePath = "./src/WebDeploy.TestSite/obj/Release/Package/PackageTmp/";
+            settings.SourcePath = "./Cake.WebDeploy.TestSite/obj/Release/netcoreapp1.1/PubTmp/Out/";
             settings.DestinationPath = deployDir;
 
             manager.Deploy(settings);

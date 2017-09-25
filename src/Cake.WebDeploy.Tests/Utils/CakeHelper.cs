@@ -16,7 +16,7 @@ namespace Cake.WebDeploy.Tests
         {
             var environment = FakeEnvironment.CreateWindowsEnvironment();
             environment.WorkingDirectory = Directory.GetCurrentDirectory();
-            environment.WorkingDirectory = environment.WorkingDirectory.Combine("../../../");
+            environment.WorkingDirectory = environment.WorkingDirectory.Combine("../../../../");
 
             return environment;
         }
