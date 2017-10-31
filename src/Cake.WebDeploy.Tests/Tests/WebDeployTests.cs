@@ -10,7 +10,7 @@ namespace Cake.WebDeploy.Tests
 {
     public class WebDeployTests
     {
-        #region Methods (2)
+        #region Methods
         [Fact(Skip = "Not working on AppVeyor")]
         public void Should_Deploy_Website_At_Default_Path()
         {

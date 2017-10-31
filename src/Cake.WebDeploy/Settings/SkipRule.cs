@@ -11,7 +11,7 @@ namespace Cake.WebDeploy
     /// </summary>
     public class SkipRule
     {
-        #region Constructor (2)
+        #region Constructor
         /// <summary>
         /// Initializes a new instance of the <see cref="SkipRule" /> class.
         /// </summary>
@@ -37,7 +37,7 @@ namespace Cake.WebDeploy
 
 
 
-        #region Properties (5)
+        #region Properties
         /// <summary>
         /// Gets or sets the Name.
         /// </summary>

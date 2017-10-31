@@ -15,7 +15,7 @@ namespace Cake.WebDeploy
     /// </summary>
     public class DeploySettings
     {
-        #region Fields (16)
+        #region Fields
         private string _PublishUrl = "";
         private RemoteAgent _AgentType = RemoteAgent.None;
         private bool? _NTLM = null;
@@ -45,7 +45,7 @@ namespace Cake.WebDeploy
 
 
 
-        #region Constructor (1)
+        #region Constructor
         /// <summary>
         /// Initializes a new instance of the <see cref="DeploySettings" /> class.
         /// </summary>
@@ -81,7 +81,7 @@ namespace Cake.WebDeploy
 
 
 
-        #region Properties (16)
+        #region Properties
         /// <summary>
         /// Gets or sets the url to publish that package to
         /// </summary>

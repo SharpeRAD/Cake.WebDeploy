@@ -12,7 +12,7 @@ namespace Cake.WebDeploy
     /// </summary>
     public static class DeploySettingsExtensions
     {
-        #region Methods (17)
+        #region Methods
         /// <summary>
         /// Sets the url to publish that package to
         /// </summary>

@@ -11,7 +11,7 @@ namespace Cake.WebDeploy
     /// </summary>
     public interface IWebDeployManager
     {
-        #region Methods (1)
+        #region Methods
         /// <summary>
         /// Deploys the content of a website
         /// </summary>

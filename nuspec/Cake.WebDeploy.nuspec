@@ -22,9 +22,11 @@
    </metadata>
 
    <files>
-      <file src="net461/Microsoft.Web.Deployment.dll" target="lib/net461" />
-      <file src="net461/Cake.WebDeploy.dll" target="lib/net461" />
-      <file src="net461/Cake.WebDeploy.xml" target="lib/net461" />
+      <file src="net46/Microsoft.Web.Deployment.dll" target="lib/net46" />
+       
+      <file src="net46/Cake.WebDeploy.dll" target="lib/net46" />
+      <file src="net46/Cake.WebDeploy.xml" target="lib/net46" />
+       
       <file src="LICENSE" />
    </files>
 </package>

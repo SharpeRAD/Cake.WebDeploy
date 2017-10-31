@@ -16,7 +16,7 @@ namespace Cake.WebDeploy
     [CakeNamespaceImport("Microsoft.Web.Deployment")]
     public static class WebDeployAliases
     {
-        #region Methods (1)
+        #region Methods
         /// <summary>
         /// Deploys the content of a website
         /// </summary>

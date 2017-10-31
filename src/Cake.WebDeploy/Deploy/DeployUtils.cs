@@ -8,7 +8,7 @@ namespace Cake.WebDeploy
 {
     internal static class DeployUtils
     {
-        #region Constants (2)
+        #region Constants
         internal const string MSDeployHandler = "msdeploy.axd";
         internal const int DefaultPort = 8172;
         #endregion
@@ -17,7 +17,7 @@ namespace Cake.WebDeploy
 
 
 
-        #region Methods (4)
+        #region Methods
         internal static string GetWmsvcUrl(string computerName, int port, string siteName)
         {
             if (!computerName.StartsWith("http", StringComparison.OrdinalIgnoreCase))

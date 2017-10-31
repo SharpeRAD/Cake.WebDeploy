@@ -21,7 +21,7 @@ namespace Cake.WebDeploy
     /// </summary>
     public class WebDeployManager : IWebDeployManager
     {
-        #region Fields (2)
+        #region Fields
         private readonly ICakeEnvironment _Environment;
         private readonly ICakeLog _Log;
         #endregion
@@ -30,7 +30,7 @@ namespace Cake.WebDeploy
 
 
 
-        #region Constructor (1)
+        #region Constructor
         /// <summary>
         /// Initializes a new instance of the <see cref="WebDeployManager" /> class.
         /// </summary>
@@ -56,7 +56,7 @@ namespace Cake.WebDeploy
 
 
 
-        #region Functions (4)
+        #region Methods
         /// <summary>
         /// Deploys the content of a website
         /// </summary>
