@@ -17,7 +17,7 @@
       <tags>Cake Script Build WebDeploy</tags>
 
        <dependencies>
-           <dependency id="Cake.Core" version="0.22.0" />
+           <dependency id="Cake.Core" version="0.26.1" />
        </dependencies>
    </metadata>
 
