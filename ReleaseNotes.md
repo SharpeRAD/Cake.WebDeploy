@@ -1,3 +1,6 @@
+### New in 0.3.2 (Released 2018/04/05)
+* [Improvement] Updated to Cake.Core v0.26
+
 ### New in 0.3.1 (Released 2017/10/31)
 * [Improvement] Drop down to net46
 
