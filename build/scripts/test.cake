@@ -16,12 +16,22 @@ Task("Run-Unit-Tests")
 
 		string outputPath = testResultsDir + "/" + test.Replace(".Tests", "") + ".xml";
 		outputPath = MakeAbsolute(File(outputPath)).FullPath;
-
+		
         DotNetCoreTest("./src/" + test + "/" + test + ".csproj", new DotNetCoreTestSettings
         {
             ArgumentCustomization = args => args.AppendSwitch("-a", " ", ".".Quote())
 												.AppendSwitch("-l", " ", ("xunit;LogFilePath=" + outputPath).Quote())
         });
+    }
+
+
+
+	// Build Report
+    Information("Building report");
+
+    if (testNames.Count > 0)
+    {
+        ReportUnit(testResultsDir);
     }
 })
 .OnError(exception =>
@@ -32,7 +42,7 @@ Task("Run-Unit-Tests")
 	foreach(string test in testNames)
     {
 		IList<XunitResult> testResults = GetXunitResults(testResultsDir + "/" + test.Replace(".Tests", "") + ".xml");
-
+		
 		foreach(XunitResult testResult in testResults)
 		{
 			errors.Add(testResult.Type + " => " + testResult.Method);
@@ -75,7 +85,7 @@ Task("Run-Unit-Tests")
 
 	// Post Message
 	SlackChatMessageResult result;
-
+	
 	SlackChatMessageSettings settings = new SlackChatMessageSettings()
 	{
 		Token = token,
@@ -84,17 +94,17 @@ Task("Run-Unit-Tests")
 	};
 
 	IList<SlackChatMessageAttachment> attachments = new List<SlackChatMessageAttachment>();
-
+		
 	attachments.Add(new SlackChatMessageAttachment()
 	{
 		Color = "danger",
 		Text = text
 	});
-
+		
 	result = Slack.Chat.PostMessage("#code", title, attachments, settings);
 
-
-
+	
+	
 	// Check Result
     if (result.Ok)
     {
@@ -108,6 +118,49 @@ Task("Run-Unit-Tests")
     }
 
 	throw exception;
+});
+
+
+
+Task("Find-Duplicates")
+	.WithCriteria(() => (target != "Skip-Test") && (target != "Skip-Restore"))
+    .IsDependentOn("Run-Unit-Tests")
+    .Does(() =>
+{
+    Information("Finding duplicates");
+
+    DupFinder(projectFiles, new DupFinderSettings()
+    {
+        OutputFile = testResultsDir + File("DupFinder.xml"),
+
+        ShowStats = true,
+        ShowText = true,
+
+        ExcludeFilesByStartingCommentSubstring = new string[] { "auto-generated" }
+    });
+
+    Information("Building report");
+    ReSharperReports(testResultsDir + "/DupFinder.xml", testResultsDir + File("DupFinder.html"));
+});
+
+
+
+Task("Inspect-Code")
+	.WithCriteria(() => (target != "Skip-Test") && (target != "Skip-Restore"))
+    .IsDependentOn("Find-Duplicates")
+    .Does(() =>
+{
+    Information("Inspecting code");
+
+	InspectCode(solution, new InspectCodeSettings()
+    {
+        OutputFile = testResultsDir + File("InspectCode.xml"),
+
+        SolutionWideAnalysis = true
+    });
+
+    Information("Building report");
+    ReSharperReports(testResultsDir + "/InspectCode.xml", testResultsDir + File("InspectCode.html"));
 });
 
 
@@ -152,7 +205,7 @@ public IList<XunitResult> GetXunitResults(string filePath)
             StackTrace = stackTrace != null ? stackTrace.Value : "",
         });
     }
-
+            
     return results;
 }
 

@@ -16,7 +16,6 @@ Task("Clear-AppData")
         foreach (string project in projectNames)
         {
             var dirs = dataDir.GetDirectories(project, SearchScope.Current);
-
             foreach(IDirectory dir in dirs)
             {
                 DeleteDirectory(dir.Path, true);
@@ -41,7 +40,6 @@ Task("Publish-Local")
         foreach (string project in projectNames)
         {
             var files = packageDir.GetFiles(project + ".*", SearchScope.Current);
-            
             foreach (IFile file in files)
             {
                 DeleteFile(file.Path);
@@ -73,8 +71,8 @@ Task("Publish-Nuget")
 				throw new InvalidOperationException("Could not resolve nuget API key.");
 			}
 
-
-
+		
+		
 			// Push the packages
 			var package = nugetDir + "/" + project + "." + version + ".nupkg";
 

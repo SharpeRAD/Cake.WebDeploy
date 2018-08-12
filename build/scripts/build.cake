@@ -41,8 +41,7 @@ Task("Build")
 	// Create build settings
 	var buildSettings = new DotNetCoreMSBuildSettings
 	{
-		Verbosity = DotNetCoreVerbosity.Diagnostic,
-		TreatAllWarningsAs = Cake.Common.Tools.DotNetCore.MSBuild.MSBuildTreatAllWarningsAs.Error
+		Verbosity = DotNetCoreVerbosity.Normal
 	};
 	
 	// Add Logger
@@ -60,7 +59,7 @@ Task("Build")
 		Verbosity = DotNetCoreVerbosity.Minimal
 	});
 
-	
+
 
 	// Build Solution
 	Information("Building {0}", solution);
