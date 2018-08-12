@@ -7,6 +7,9 @@
 #addin "Cake.AWS.S3"
 #addin "Cake.FileHelpers"
 
+#tool "ReportUnit"
+#tool "JetBrains.ReSharper.CommandLineTools"
+
 
 
 
