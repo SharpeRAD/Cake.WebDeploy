@@ -91,7 +91,7 @@ namespace Cake.WebDeploy.Tests
                 .UseUsername(@"YYY")
                 .UsePassword("ZZZ");
 
-            Assert.Equal(settings.PublishUrl, "https://XXX:8172/msdeploy.axd?site=Test");
+            Assert.Equal("https://XXX:8172/msdeploy.axd?site=Test", settings.PublishUrl);
         }
 
 
@@ -101,11 +101,11 @@ namespace Cake.WebDeploy.Tests
         {
             DeploySettings deploySettings = new DeploySettings();
 
-            Assert.Equal(false, deploySettings.UseAppOffline);
+            Assert.False(deploySettings.UseAppOffline);
 
             deploySettings.UseAppOffline(true);
 
-            Assert.Equal(true, deploySettings.UseAppOffline);
+            Assert.True(deploySettings.UseAppOffline);
         }
         #endregion
     }
