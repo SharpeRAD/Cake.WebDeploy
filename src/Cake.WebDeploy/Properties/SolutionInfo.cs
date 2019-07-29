@@ -5,8 +5,8 @@
 //------------------------------------------------------------------------------
 using System.Reflection;
 
-[assembly: AssemblyVersion("0.3.1")]
-[assembly: AssemblyFileVersion("0.3.1")]
-[assembly: AssemblyInformationalVersion("0.3.1")]
-[assembly: AssemblyCopyright("Copyright (c) 2015 - 2017 Phillip Sharpe")]
+[assembly: AssemblyVersion("0.3.3")]
+[assembly: AssemblyFileVersion("0.3.3")]
+[assembly: AssemblyInformationalVersion("0.3.3")]
+[assembly: AssemblyCopyright("Copyright (c) 2015 - 2019 Phillip Sharpe")]
 
