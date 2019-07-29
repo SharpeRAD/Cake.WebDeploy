@@ -2,17 +2,13 @@
 // IMPORTS
 //////////////////////////////////////////////////////////////////////
 
-#addin "Cake.Slack"
-#addin "Cake.ReSharperReports"
-#addin "Cake.AWS.S3"
-#addin "Cake.FileHelpers"
+#addin Cake.Slack&version=0.12.0
+#addin Cake.ReSharperReports&version=0.10.0
+#addin Cake.AWS.S3&version=0.6.6
+#addin Cake.FileHelpers&version=3.2.0
 
-#tool "ReportUnit"
-#tool "JetBrains.ReSharper.CommandLineTools"
-
-
-
-
+#tool ReportUnit&version=1.2.1
+#tool JetBrains.ReSharper.CommandLineTools&version=2018.3.4
 
 //////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -20,10 +16,6 @@
 
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
-
-
-
-
 
 //////////////////////////////////////////////////////////////////////
 // SOLUTION
@@ -33,14 +25,10 @@ var configuration = Argument("configuration", "Release");
 var appName = "Cake.WebDeploy";
 
 // Projects
-var projectNames = new List<string>() 
-{ 
+var projectNames = new List<string>()
+{
     "Cake.WebDeploy"
 };
-
-
-
-
 
 ///////////////////////////////////////////////////////////////////////////////
 // LOAD

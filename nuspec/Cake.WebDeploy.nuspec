@@ -10,24 +10,20 @@
       <summary>WebDeploy addon for cake build.</summary>
       <licenseUrl>https://github.com/SharpeRAD/Cake.WebDeploy/LICENSE</licenseUrl>
       <projectUrl>https://github.com/SharpeRAD/Cake.WebDeploy</projectUrl>
-      <iconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</iconUrl>
+      <iconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</iconUrl>
       <requireLicenseAcceptance>false</requireLicenseAcceptance>
       <copyright>Copyright (c) Phillip Sharpe 2015</copyright>
       <releaseNotes>Initial Release</releaseNotes>
       <tags>Cake Script Build WebDeploy</tags>
-
-       <dependencies>
-           <dependency id="Cake.Core" version="0.29.0" />
-       </dependencies>
    </metadata>
 
    <files>
       <file src="net46/Cake.WebDeploy.dll" target="lib/net46" />
       <file src="net46/Cake.WebDeploy.xml" target="lib/net46" />
       <file src="net46/Cake.WebDeploy.pdb" target="lib/net46" />
-	  
+
       <file src="net46/Microsoft.Web.Deployment.dll" target="lib/net46" />
-       
+
       <file src="LICENSE" />
    </files>
 </package>
