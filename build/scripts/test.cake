@@ -5,28 +5,28 @@
 
 
 Task("Run-Unit-Tests")
-	.WithCriteria(() => (target != "Skip-Test") && (target != "Skip-Restore"))
+    .WithCriteria(() => (target != "Skip-Test") && (target != "Skip-Restore"))
     .IsDependentOn("Build")
     .Does(() =>
 {
-	// Run Test
+    // Run Test
     foreach(string test in testNames)
     {
-		Information("Running unit tests: {0}", test);
+        Information("Running unit tests: {0}", test);
 
-		string outputPath = testResultsDir + "/" + test.Replace(".Tests", "") + ".xml";
-		outputPath = MakeAbsolute(File(outputPath)).FullPath;
-		
+        string outputPath = testResultsDir + "/" + test.Replace(".Tests", "") + ".xml";
+        outputPath = MakeAbsolute(File(outputPath)).FullPath;
+
         DotNetCoreTest("./src/" + test + "/" + test + ".csproj", new DotNetCoreTestSettings
         {
             ArgumentCustomization = args => args.AppendSwitch("-a", " ", ".".Quote())
-												.AppendSwitch("-l", " ", ("xunit;LogFilePath=" + outputPath).Quote())
+                                                .AppendSwitch("-l", " ", ("xunit;LogFilePath=" + outputPath).Quote())
         });
     }
 
 
 
-	// Build Report
+    // Build Report
     Information("Building report");
 
     if (testNames.Count > 0)
@@ -36,44 +36,44 @@ Task("Run-Unit-Tests")
 })
 .OnError(exception =>
 {
-	// Get Errors
-	IList<string> errors = new List<string>();
+    // Get Errors
+    IList<string> errors = new List<string>();
 
-	foreach(string test in testNames)
+    foreach(string test in testNames)
     {
-		IList<XunitResult> testResults = GetXunitResults(testResultsDir + "/" + test.Replace(".Tests", "") + ".xml");
-		
-		foreach(XunitResult testResult in testResults)
-		{
-			errors.Add(testResult.Type + " => " + testResult.Method);
-			errors.Add(testResult.StackTrace);
-		}
+        IList<XunitResult> testResults = GetXunitResults(testResultsDir + "/" + test.Replace(".Tests", "") + ".xml");
+
+        foreach(XunitResult testResult in testResults)
+        {
+            errors.Add(testResult.Type + " => " + testResult.Method);
+            errors.Add(testResult.StackTrace);
+        }
     }
 
-	if (errors.Count == 0)
-	{
-		errors.Add(exception.Message);
-	}
+    if (errors.Count == 0)
+    {
+        errors.Add(exception.Message);
+    }
 
 
 
     // Get Message
-	var title = "Unit-Tests failed for " + appName + " v" + version;
+    var title = "Unit-Tests failed for " + appName + " v" + version;
     var text = "";
 
-	for (int index = 0; index < errors.Count; index++)
-	{
-		text += errors[index];
+    for (int index = 0; index < errors.Count; index++)
+    {
+        text += errors[index];
 
-		if (index < (errors.Count - 1))
-		{
-			text += "\n";
-		}
-	}
+        if (index < (errors.Count - 1))
+        {
+            text += "\n";
+        }
+    }
 
 
 
-	// Resolve the API key.
+    // Resolve the API key.
     var token = EnvironmentVariable("SLACK_TOKEN");
 
     if (string.IsNullOrEmpty(token))
@@ -83,29 +83,29 @@ Task("Run-Unit-Tests")
 
 
 
-	// Post Message
-	SlackChatMessageResult result;
-	
-	SlackChatMessageSettings settings = new SlackChatMessageSettings()
-	{
-		Token = token,
-		UserName = "Cake",
-		IconUrl = new System.Uri("https://raw.githubusercontent.com/cake-build/graphics/master/png/cake-small.png")
-	};
+    // Post Message
+    SlackChatMessageResult result;
 
-	IList<SlackChatMessageAttachment> attachments = new List<SlackChatMessageAttachment>();
-		
-	attachments.Add(new SlackChatMessageAttachment()
-	{
-		Color = "danger",
-		Text = text
-	});
-		
-	result = Slack.Chat.PostMessage("#code", title, attachments, settings);
+    SlackChatMessageSettings settings = new SlackChatMessageSettings()
+    {
+        Token = token,
+        UserName = "Cake",
+        IconUrl = new System.Uri("https://cdn.jsdelivr.net/gh/cake-build/graphics/png/cake-small.png")
+    };
 
-	
-	
-	// Check Result
+    IList<SlackChatMessageAttachment> attachments = new List<SlackChatMessageAttachment>();
+
+    attachments.Add(new SlackChatMessageAttachment()
+    {
+        Color = "danger",
+        Text = text
+    });
+
+    result = Slack.Chat.PostMessage("#code", title, attachments, settings);
+
+
+
+    // Check Result
     if (result.Ok)
     {
         // Posted
@@ -117,13 +117,13 @@ Task("Run-Unit-Tests")
         Error("Failed to send message to Slack: {0}", result.Error);
     }
 
-	throw exception;
+    throw exception;
 });
 
 
 
 Task("Find-Duplicates")
-	.WithCriteria(() => (target != "Skip-Test") && (target != "Skip-Restore"))
+    .WithCriteria(() => (target != "Skip-Test") && (target != "Skip-Restore"))
     .IsDependentOn("Run-Unit-Tests")
     .Does(() =>
 {
@@ -146,13 +146,13 @@ Task("Find-Duplicates")
 
 
 Task("Inspect-Code")
-	.WithCriteria(() => (target != "Skip-Test") && (target != "Skip-Restore"))
+    .WithCriteria(() => (target != "Skip-Test") && (target != "Skip-Restore"))
     .IsDependentOn("Find-Duplicates")
     .Does(() =>
 {
     Information("Inspecting code");
 
-	InspectCode(solution, new InspectCodeSettings()
+    InspectCode(solution, new InspectCodeSettings()
     {
         OutputFile = testResultsDir + File("InspectCode.xml"),
 
@@ -205,7 +205,7 @@ public IList<XunitResult> GetXunitResults(string filePath)
             StackTrace = stackTrace != null ? stackTrace.Value : "",
         });
     }
-            
+
     return results;
 }
 
