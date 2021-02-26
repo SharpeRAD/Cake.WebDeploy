@@ -15,14 +15,17 @@
       <copyright>Copyright (c) Phillip Sharpe 2015</copyright>
       <releaseNotes>Initial Release</releaseNotes>
       <tags>Cake Script Build WebDeploy</tags>
+	  <dependencies>
+		  <group targetFramework=".NETFramework4.6">
+			  <dependency id="Microsoft.Web.Deployment" version="4.0.5" />
+		   </group>
+	   </dependencies>
    </metadata>
 
    <files>
       <file src="net46/Cake.WebDeploy.dll" target="lib/net46" />
       <file src="net46/Cake.WebDeploy.xml" target="lib/net46" />
       <file src="net46/Cake.WebDeploy.pdb" target="lib/net46" />
-
-      <file src="net46/Microsoft.Web.Deployment.dll" target="lib/net46" />
 
       <file src="LICENSE" />
    </files>
