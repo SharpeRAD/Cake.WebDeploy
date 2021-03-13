@@ -5,7 +5,9 @@
         <PackageId>Cake.WebDeploy</PackageId>
         <OutputType>Library</OutputType>
 
-        <TargetFrameworks>net46;</TargetFrameworks>
+        <TargetFrameworks>net461;</TargetFrameworks>
+
+	    <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
         <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
         <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
@@ -14,11 +16,7 @@
         <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
     </PropertyGroup>
 
-    <PropertyGroup>
-        <DocumentationFile>bin\Debug\net46\Cake.WebDeploy.xml</DocumentationFile>
-    </PropertyGroup>
-
-    <ItemGroup>
+	<ItemGroup>
         <PackageReference Include="Cake.Core" Version="1.0.0" PrivateAssets="All" />
 
         <PackageReference Include="Microsoft.Web.Deployment" Version="4.0.5" />
