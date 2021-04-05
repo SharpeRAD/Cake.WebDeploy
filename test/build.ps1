@@ -54,15 +54,17 @@ Param(
 
 
 
-$CakeVersion = "0.32.1"
+$CakeVersion = "1.0.0"
 $DotNetChannel = "Current";
-$DotNetVersion = "2.1.500";
+$DotNetVersion = "5.0.103";
 $DotNetInstallerUri = "https://dot.net/v1/dotnet-install.ps1";
 $NugetUrl = "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe"
 
 # Temporarily skip verification and opt-in to new in-proc NuGet
-$ENV:CAKE_SETTINGS_SKIPVERIFICATION='true'
-$ENV:CAKE_NUGET_USEINPROCESSCLIENT='true'
+$ENV:CAKE_SETTINGS_SKIPPACKAGEVERSIONCHECK='true'
+
+# Use TLS 1.2
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12;
 
 
 
@@ -125,25 +127,25 @@ $ENV:CAKE_PATHS_MODULES = $MODULES_DIR
 
 Function Remove-PathVariable([string]$VariableToRemove)
 {
+    $SplitChar = ';'
+    if ($IsMacOS -or $IsLinux) {
+        $SplitChar = ':'
+    }
+
     $path = [Environment]::GetEnvironmentVariable("PATH", "User")
     if ($path -ne $null)
     {
-        $newItems = $path.Split(';', [StringSplitOptions]::RemoveEmptyEntries) | Where-Object { "$($_)" -inotlike $VariableToRemove }
-        [Environment]::SetEnvironmentVariable("PATH", [System.String]::Join(';', $newItems), "User")
+        $newItems = $path.Split($SplitChar, [StringSplitOptions]::RemoveEmptyEntries) | Where-Object { "$($_)" -inotlike $VariableToRemove }
+        [Environment]::SetEnvironmentVariable("PATH", [System.String]::Join($SplitChar, $newItems), "User")
     }
 
     $path = [Environment]::GetEnvironmentVariable("PATH", "Process")
     if ($path -ne $null)
     {
-        $newItems = $path.Split(';', [StringSplitOptions]::RemoveEmptyEntries) | Where-Object { "$($_)" -inotlike $VariableToRemove }
-        [Environment]::SetEnvironmentVariable("PATH", [System.String]::Join(';', $newItems), "Process")
+        $newItems = $path.Split($SplitChar, [StringSplitOptions]::RemoveEmptyEntries) | Where-Object { "$($_)" -inotlike $VariableToRemove }
+        [Environment]::SetEnvironmentVariable("PATH", [System.String]::Join($SplitChar, $newItems), "Process")
     }
 }
-
-
-
-# Enforce TLS 1.2
-[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12;
 
 
 
@@ -158,19 +160,27 @@ if (Get-Command dotnet -ErrorAction SilentlyContinue)
 if($FoundDotNetCliVersion -ne $DotNetVersion)
 {
     $InstallPath = Join-Path $TOOLS_DIR "DotNet"
-
-    if (!(Test-Path $InstallPath))
-    {
-        mkdir -Force $InstallPath | Out-Null;
+    if (!(Test-Path $InstallPath)) {
+        New-Item -Path $InstallPath -ItemType Directory -Force | Out-Null;
     }
 
-    (New-Object System.Net.WebClient).DownloadFile($DotNetInstallerUri, "$InstallPath\dotnet-install.ps1");
-    & $InstallPath\dotnet-install.ps1 -Channel $DotNetChannel -Version $DotNetVersion -InstallDir $InstallPath;
+    if ($IsMacOS -or $IsLinux) {
+        $ScriptPath = Join-Path $InstallPath 'dotnet-install.sh'
+        (New-Object System.Net.WebClient).DownloadFile($DotNetUnixInstallerUri, $ScriptPath);
+        & bash $ScriptPath --version "$DotNetVersion" --install-dir "$InstallPath" --channel "$DotNetChannel" --no-path
 
-    Remove-PathVariable "$InstallPath"
-    $env:PATH = "$InstallPath;$env:PATH"
-    $env:DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
-    $env:DOTNET_CLI_TELEMETRY_OPTOUT=1
+        Remove-PathVariable "$InstallPath"
+        $env:PATH = "$($InstallPath):$env:PATH"
+    }
+    else {
+        $ScriptPath = Join-Path $InstallPath 'dotnet-install.ps1'
+        (New-Object System.Net.WebClient).DownloadFile($DotNetInstallerUri, $ScriptPath);
+        & $ScriptPath -Channel $DotNetChannel -Version $DotNetVersion -InstallDir $InstallPath;
+
+        Remove-PathVariable "$InstallPath"
+        $env:PATH = "$InstallPath;$env:PATH"
+    }
+    $env:DOTNET_ROOT=$InstallPath
 }
 
 

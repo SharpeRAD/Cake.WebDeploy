@@ -6,12 +6,12 @@ Task("Slack")
     .WithCriteria(() => !isPullRequest)
     .Does(() =>
 {
-    // Resolve the API key.
-    var token = EnvironmentVariable("SLACK_TOKEN");
+    // Resolve the webHook Url.
+    var webHookUrl = EnvironmentVariable("SLACK_WEBHOOK_URL");
 
-    if (string.IsNullOrEmpty(token))
+    if (string.IsNullOrEmpty(webHookUrl))
     {
-        throw new InvalidOperationException("Could not resolve Slack token.");
+        throw new InvalidOperationException("Could not resolve Slack webHook Url.");
     }
 
 
@@ -55,7 +55,7 @@ Task("Slack")
 
     SlackChatMessageSettings settings = new SlackChatMessageSettings()
     {
-        Token = token,
+        IncomingWebHookUrl = webHookUrl,
         UserName = "Cake",
         IconUrl = new System.Uri("https://cdn.jsdelivr.net/gh/cake-build/graphics/png/cake-small.png")
     };
@@ -82,12 +82,12 @@ Task("Slack")
     // Check Result
     if (result.Ok)
     {
-        //Posted
+        // Posted
         Information("Message was succcessfully sent to Slack.");
     }
     else
     {
-        //Error
+        // Error
         Error("Failed to send message to Slack: {0}", result.Error);
     }
 });
